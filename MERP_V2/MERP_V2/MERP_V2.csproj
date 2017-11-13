@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D08FAA31-0097-4DED-B7C1-4CF507C02D10}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MERP_V2</RootNamespace>
+    <AssemblyName>MERP_V2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Desktop\Merp_V1\MERP_MUI\MERP_MUI\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnaEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnaEkran.Designer.cs">
+      <DependentUpon>AnaEkran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaturaDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaturaDuzenle.Designer.cs">
+      <DependentUpon>FaturaDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaturaGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaturaGiris.Designer.cs">
+      <DependentUpon>FaturaGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faturalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faturalar.Designer.cs">
+      <DependentUpon>Faturalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FirmaRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirmaRapor.Designer.cs">
+      <DependentUpon>FirmaRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HarcamaOngorusu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HarcamaOngorusu.Designer.cs">
+      <DependentUpon>HarcamaOngorusu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OdenecekFaturalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OdenecekFaturalar.Designer.cs">
+      <DependentUpon>OdenecekFaturalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjeDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjeDuzenle.Designer.cs">
+      <DependentUpon>ProjeDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjeGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjeGiris.Designer.cs">
+      <DependentUpon>ProjeGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projeler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Projeler.Designer.cs">
+      <DependentUpon>Projeler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjeyeGoreRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjeyeGoreRapor.Designer.cs">
+      <DependentUpon>ProjeyeGoreRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiparisEmirleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SiparisEmirleri.Designer.cs">
+      <DependentUpon>SiparisEmirleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SiparisEmriDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SiparisEmriDuzenle.Designer.cs">
+      <DependentUpon>SiparisEmriDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SiparisEmriGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SiparisEmriGiris.Designer.cs">
+      <DependentUpon>SiparisEmriGiris.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnaEkran.resx">
+      <DependentUpon>AnaEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaturaDuzenle.resx">
+      <DependentUpon>FaturaDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaturaGiris.resx">
+      <DependentUpon>FaturaGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faturalar.resx">
+      <DependentUpon>Faturalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirmaRapor.resx">
+      <DependentUpon>FirmaRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HarcamaOngorusu.resx">
+      <DependentUpon>HarcamaOngorusu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OdenecekFaturalar.resx">
+      <DependentUpon>OdenecekFaturalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjeDuzenle.resx">
+      <DependentUpon>ProjeDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjeGiris.resx">
+      <DependentUpon>ProjeGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projeler.resx">
+      <DependentUpon>Projeler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjeyeGoreRapor.resx">
+      <DependentUpon>ProjeyeGoreRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SiparisEmirleri.resx">
+      <DependentUpon>SiparisEmirleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SiparisEmriDuzenle.resx">
+      <DependentUpon>SiparisEmriDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SiparisEmriGiris.resx">
+      <DependentUpon>SiparisEmriGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.cabinet.files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.checkmark.pencil.top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.graph.line.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.paperclip.rotated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.rocket.rotated.45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.transit.connection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.lines.horizontal.4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture2.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
