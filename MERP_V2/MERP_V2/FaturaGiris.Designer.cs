@@ -42,7 +42,6 @@
             this.cmb_firma = new System.Windows.Forms.ComboBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.lbl_tarih = new MetroFramework.Controls.MetroLabel();
-            this.txt_ftr_tarih = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.txt_ftr_vade = new MetroFramework.Controls.MetroTextBox();
             this.date_alarm = new MetroFramework.Controls.MetroDateTime();
@@ -58,6 +57,13 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.rcb_aciklama = new System.Windows.Forms.RichTextBox();
             this.btn_kaydet = new MetroFramework.Controls.MetroButton();
+            this.mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
+            this.mySqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+            this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
+            this.mySqlCommandProjeNo = new MySql.Data.MySqlClient.MySqlCommand();
+            this.mySqlCommandFirmalar = new MySql.Data.MySqlClient.MySqlCommand();
+            this.mySqlCommandSatinAlmaNo = new MySql.Data.MySqlClient.MySqlCommand();
+            this.date_ftr_tarih = new MetroFramework.Controls.MetroDateTime();
             this.SuspendLayout();
             // 
             // cmb_avans
@@ -75,6 +81,7 @@
             this.cmb_avans.UseCustomForeColor = true;
             this.cmb_avans.UseSelectable = true;
             this.cmb_avans.UseStyleColors = true;
+            this.cmb_avans.CheckedChanged += new System.EventHandler(this.cmb_avans_CheckedChanged);
             // 
             // rbKesilen
             // 
@@ -91,6 +98,7 @@
             this.rbKesilen.UseCustomForeColor = true;
             this.rbKesilen.UseSelectable = true;
             this.rbKesilen.UseStyleColors = true;
+            this.rbKesilen.CheckedChanged += new System.EventHandler(this.rbKesilen_CheckedChanged);
             // 
             // rbGelen
             // 
@@ -107,6 +115,7 @@
             this.rbGelen.UseCustomForeColor = true;
             this.rbGelen.UseSelectable = true;
             this.rbGelen.UseStyleColors = true;
+            this.rbGelen.CheckedChanged += new System.EventHandler(this.rbGelen_CheckedChanged);
             // 
             // cmb_durum
             // 
@@ -141,6 +150,7 @@
             this.cmb_se.UseCustomForeColor = true;
             this.cmb_se.UseSelectable = true;
             this.cmb_se.UseStyleColors = true;
+            this.cmb_se.Visible = false;
             // 
             // cmb_gelense
             // 
@@ -159,6 +169,7 @@
             this.cmb_gelense.UseCustomForeColor = true;
             this.cmb_gelense.UseSelectable = true;
             this.cmb_gelense.UseStyleColors = true;
+            this.cmb_gelense.Visible = false;
             // 
             // ck_cokluftr
             // 
@@ -175,12 +186,13 @@
             this.ck_cokluftr.UseCustomForeColor = true;
             this.ck_cokluftr.UseSelectable = true;
             this.ck_cokluftr.UseStyleColors = true;
+            this.ck_cokluftr.CheckedChanged += new System.EventHandler(this.ck_cokluftr_CheckedChanged);
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel2.Location = new System.Drawing.Point(28, 209);
+            this.metroLabel2.Location = new System.Drawing.Point(28, 198);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(75, 19);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Red;
@@ -221,7 +233,7 @@
             this.txt_fatura_no.CustomButton.UseSelectable = true;
             this.txt_fatura_no.CustomButton.Visible = false;
             this.txt_fatura_no.Lines = new string[0];
-            this.txt_fatura_no.Location = new System.Drawing.Point(132, 208);
+            this.txt_fatura_no.Location = new System.Drawing.Point(132, 197);
             this.txt_fatura_no.MaxLength = 32767;
             this.txt_fatura_no.Name = "txt_fatura_no";
             this.txt_fatura_no.PasswordChar = '\0';
@@ -265,7 +277,7 @@
             this.cmb_firma.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_firma.BackColor = System.Drawing.Color.White;
             this.cmb_firma.FormattingEnabled = true;
-            this.cmb_firma.Location = new System.Drawing.Point(132, 254);
+            this.cmb_firma.Location = new System.Drawing.Point(132, 232);
             this.cmb_firma.Name = "cmb_firma";
             this.cmb_firma.Size = new System.Drawing.Size(184, 21);
             this.cmb_firma.TabIndex = 84;
@@ -274,7 +286,7 @@
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel6.Location = new System.Drawing.Point(26, 253);
+            this.metroLabel6.Location = new System.Drawing.Point(26, 240);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(77, 19);
             this.metroLabel6.Style = MetroFramework.MetroColorStyle.Red;
@@ -289,7 +301,7 @@
             // 
             this.lbl_tarih.AutoSize = true;
             this.lbl_tarih.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_tarih.Location = new System.Drawing.Point(14, 299);
+            this.lbl_tarih.Location = new System.Drawing.Point(14, 273);
             this.lbl_tarih.Name = "lbl_tarih";
             this.lbl_tarih.Size = new System.Drawing.Size(89, 19);
             this.lbl_tarih.Style = MetroFramework.MetroColorStyle.Red;
@@ -300,46 +312,11 @@
             this.lbl_tarih.UseCustomForeColor = true;
             this.lbl_tarih.UseStyleColors = true;
             // 
-            // txt_ftr_tarih
-            // 
-            // 
-            // 
-            // 
-            this.txt_ftr_tarih.CustomButton.Image = null;
-            this.txt_ftr_tarih.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.txt_ftr_tarih.CustomButton.Name = "";
-            this.txt_ftr_tarih.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txt_ftr_tarih.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txt_ftr_tarih.CustomButton.TabIndex = 1;
-            this.txt_ftr_tarih.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txt_ftr_tarih.CustomButton.UseSelectable = true;
-            this.txt_ftr_tarih.CustomButton.Visible = false;
-            this.txt_ftr_tarih.Lines = new string[0];
-            this.txt_ftr_tarih.Location = new System.Drawing.Point(132, 298);
-            this.txt_ftr_tarih.MaxLength = 32767;
-            this.txt_ftr_tarih.Name = "txt_ftr_tarih";
-            this.txt_ftr_tarih.PasswordChar = '\0';
-            this.txt_ftr_tarih.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txt_ftr_tarih.SelectedText = "";
-            this.txt_ftr_tarih.SelectionLength = 0;
-            this.txt_ftr_tarih.SelectionStart = 0;
-            this.txt_ftr_tarih.ShortcutsEnabled = true;
-            this.txt_ftr_tarih.Size = new System.Drawing.Size(184, 23);
-            this.txt_ftr_tarih.Style = MetroFramework.MetroColorStyle.Red;
-            this.txt_ftr_tarih.TabIndex = 85;
-            this.txt_ftr_tarih.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.txt_ftr_tarih.UseCustomBackColor = true;
-            this.txt_ftr_tarih.UseCustomForeColor = true;
-            this.txt_ftr_tarih.UseSelectable = true;
-            this.txt_ftr_tarih.UseStyleColors = true;
-            this.txt_ftr_tarih.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txt_ftr_tarih.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel3.Location = new System.Drawing.Point(57, 345);
+            this.metroLabel3.Location = new System.Drawing.Point(57, 307);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(46, 19);
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.Red;
@@ -365,7 +342,7 @@
             this.txt_ftr_vade.CustomButton.UseSelectable = true;
             this.txt_ftr_vade.CustomButton.Visible = false;
             this.txt_ftr_vade.Lines = new string[0];
-            this.txt_ftr_vade.Location = new System.Drawing.Point(132, 344);
+            this.txt_ftr_vade.Location = new System.Drawing.Point(132, 306);
             this.txt_ftr_vade.MaxLength = 32767;
             this.txt_ftr_vade.Name = "txt_ftr_vade";
             this.txt_ftr_vade.PasswordChar = '\0';
@@ -384,20 +361,25 @@
             this.txt_ftr_vade.UseStyleColors = true;
             this.txt_ftr_vade.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_ftr_vade.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_ftr_vade.TextChanged += new System.EventHandler(this.txt_ftr_vade_TextChanged);
             // 
             // date_alarm
             // 
-            this.date_alarm.Location = new System.Drawing.Point(132, 390);
+            this.date_alarm.Location = new System.Drawing.Point(132, 341);
             this.date_alarm.MinimumSize = new System.Drawing.Size(0, 29);
             this.date_alarm.Name = "date_alarm";
             this.date_alarm.Size = new System.Drawing.Size(184, 29);
+            this.date_alarm.Style = MetroFramework.MetroColorStyle.Red;
             this.date_alarm.TabIndex = 90;
+            this.date_alarm.UseCustomBackColor = true;
+            this.date_alarm.UseCustomForeColor = true;
+            this.date_alarm.UseStyleColors = true;
             // 
             // ck_alarm
             // 
             this.ck_alarm.AutoSize = true;
             this.ck_alarm.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ck_alarm.Location = new System.Drawing.Point(338, 398);
+            this.ck_alarm.Location = new System.Drawing.Point(338, 348);
             this.ck_alarm.Name = "ck_alarm";
             this.ck_alarm.Size = new System.Drawing.Size(63, 15);
             this.ck_alarm.Style = MetroFramework.MetroColorStyle.Red;
@@ -413,7 +395,7 @@
             // 
             this.lbl_tutar.AutoSize = true;
             this.lbl_tutar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_tutar.Location = new System.Drawing.Point(13, 443);
+            this.lbl_tutar.Location = new System.Drawing.Point(13, 380);
             this.lbl_tutar.Name = "lbl_tutar";
             this.lbl_tutar.Size = new System.Drawing.Size(90, 19);
             this.lbl_tutar.Style = MetroFramework.MetroColorStyle.Red;
@@ -439,7 +421,7 @@
             this.txt_ftr_tutar.CustomButton.UseSelectable = true;
             this.txt_ftr_tutar.CustomButton.Visible = false;
             this.txt_ftr_tutar.Lines = new string[0];
-            this.txt_ftr_tutar.Location = new System.Drawing.Point(132, 442);
+            this.txt_ftr_tutar.Location = new System.Drawing.Point(132, 382);
             this.txt_ftr_tutar.MaxLength = 32767;
             this.txt_ftr_tutar.Name = "txt_ftr_tutar";
             this.txt_ftr_tutar.PasswordChar = '\0';
@@ -463,7 +445,7 @@
             // 
             this.metroLabel9.AutoSize = true;
             this.metroLabel9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel9.Location = new System.Drawing.Point(56, 494);
+            this.metroLabel9.Location = new System.Drawing.Point(56, 420);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(47, 19);
             this.metroLabel9.Style = MetroFramework.MetroColorStyle.Red;
@@ -486,7 +468,7 @@
             "TRY",
             "CHF",
             "GBP"});
-            this.cmb_birim.Location = new System.Drawing.Point(132, 488);
+            this.cmb_birim.Location = new System.Drawing.Point(132, 417);
             this.cmb_birim.Name = "cmb_birim";
             this.cmb_birim.Size = new System.Drawing.Size(184, 29);
             this.cmb_birim.Style = MetroFramework.MetroColorStyle.Red;
@@ -501,7 +483,7 @@
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel5.Location = new System.Drawing.Point(12, 541);
+            this.metroLabel5.Location = new System.Drawing.Point(12, 456);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(91, 19);
             this.metroLabel5.Style = MetroFramework.MetroColorStyle.Red;
@@ -527,7 +509,7 @@
             this.txt_avans.CustomButton.UseSelectable = true;
             this.txt_avans.CustomButton.Visible = false;
             this.txt_avans.Lines = new string[0];
-            this.txt_avans.Location = new System.Drawing.Point(132, 540);
+            this.txt_avans.Location = new System.Drawing.Point(132, 458);
             this.txt_avans.MaxLength = 32767;
             this.txt_avans.Name = "txt_avans";
             this.txt_avans.PasswordChar = '\0';
@@ -551,7 +533,7 @@
             // 
             this.lbl_tip.AutoSize = true;
             this.lbl_tip.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_tip.Location = new System.Drawing.Point(25, 591);
+            this.lbl_tip.Location = new System.Drawing.Point(25, 497);
             this.lbl_tip.Name = "lbl_tip";
             this.lbl_tip.Size = new System.Drawing.Size(78, 19);
             this.lbl_tip.Style = MetroFramework.MetroColorStyle.Red;
@@ -573,7 +555,7 @@
             "Elektronik",
             "Genel Giderler",
             "Kesilen"});
-            this.cmb_ftr_tip.Location = new System.Drawing.Point(132, 586);
+            this.cmb_ftr_tip.Location = new System.Drawing.Point(132, 493);
             this.cmb_ftr_tip.Name = "cmb_ftr_tip";
             this.cmb_ftr_tip.Size = new System.Drawing.Size(184, 29);
             this.cmb_ftr_tip.Style = MetroFramework.MetroColorStyle.Red;
@@ -588,7 +570,7 @@
             // 
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel8.Location = new System.Drawing.Point(34, 641);
+            this.metroLabel8.Location = new System.Drawing.Point(34, 536);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(69, 19);
             this.metroLabel8.Style = MetroFramework.MetroColorStyle.Red;
@@ -603,7 +585,7 @@
             // 
             this.rcb_aciklama.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rcb_aciklama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rcb_aciklama.Location = new System.Drawing.Point(132, 641);
+            this.rcb_aciklama.Location = new System.Drawing.Point(132, 536);
             this.rcb_aciklama.Name = "rcb_aciklama";
             this.rcb_aciklama.Size = new System.Drawing.Size(219, 87);
             this.rcb_aciklama.TabIndex = 99;
@@ -612,7 +594,7 @@
             // btn_kaydet
             // 
             this.btn_kaydet.Highlight = true;
-            this.btn_kaydet.Location = new System.Drawing.Point(285, 737);
+            this.btn_kaydet.Location = new System.Drawing.Point(285, 636);
             this.btn_kaydet.Name = "btn_kaydet";
             this.btn_kaydet.Size = new System.Drawing.Size(116, 43);
             this.btn_kaydet.Style = MetroFramework.MetroColorStyle.Red;
@@ -623,12 +605,68 @@
             this.btn_kaydet.UseCustomForeColor = true;
             this.btn_kaydet.UseSelectable = true;
             this.btn_kaydet.UseStyleColors = true;
+            this.btn_kaydet.Click += new System.EventHandler(this.btn_kaydet_Click);
+            // 
+            // mySqlConnection
+            // 
+            this.mySqlConnection.ConnectionString = "server=localhost;database=merp_dbv1;user id=root;password=root";
+            // 
+            // mySqlCommand
+            // 
+            this.mySqlCommand.CacheAge = 60;
+            this.mySqlCommand.Connection = this.mySqlConnection;
+            this.mySqlCommand.EnableCaching = false;
+            this.mySqlCommand.Transaction = null;
+            // 
+            // mySqlDataAdapter1
+            // 
+            this.mySqlDataAdapter1.DeleteCommand = null;
+            this.mySqlDataAdapter1.InsertCommand = null;
+            this.mySqlDataAdapter1.SelectCommand = null;
+            this.mySqlDataAdapter1.UpdateCommand = null;
+            // 
+            // mySqlCommandProjeNo
+            // 
+            this.mySqlCommandProjeNo.CacheAge = 60;
+            this.mySqlCommandProjeNo.CommandText = "SELECT DISTINCT proje_no FROM db_projeler";
+            this.mySqlCommandProjeNo.Connection = this.mySqlConnection;
+            this.mySqlCommandProjeNo.EnableCaching = false;
+            this.mySqlCommandProjeNo.Transaction = null;
+            // 
+            // mySqlCommandFirmalar
+            // 
+            this.mySqlCommandFirmalar.CacheAge = 60;
+            this.mySqlCommandFirmalar.CommandText = "SELECT DISTINCT fatura_firma FROM db_faturalar";
+            this.mySqlCommandFirmalar.Connection = this.mySqlConnection;
+            this.mySqlCommandFirmalar.EnableCaching = false;
+            this.mySqlCommandFirmalar.Transaction = null;
+            // 
+            // mySqlCommandSatinAlmaNo
+            // 
+            this.mySqlCommandSatinAlmaNo.CacheAge = 60;
+            this.mySqlCommandSatinAlmaNo.CommandText = "SELECT DISTINCT satinalma_no FROM db_siparis_emri where siparis_tipi=\'A\'";
+            this.mySqlCommandSatinAlmaNo.Connection = this.mySqlConnection;
+            this.mySqlCommandSatinAlmaNo.EnableCaching = false;
+            this.mySqlCommandSatinAlmaNo.Transaction = null;
+            // 
+            // date_ftr_tarih
+            // 
+            this.date_ftr_tarih.Location = new System.Drawing.Point(132, 265);
+            this.date_ftr_tarih.MinimumSize = new System.Drawing.Size(0, 29);
+            this.date_ftr_tarih.Name = "date_ftr_tarih";
+            this.date_ftr_tarih.Size = new System.Drawing.Size(184, 29);
+            this.date_ftr_tarih.Style = MetroFramework.MetroColorStyle.Red;
+            this.date_ftr_tarih.TabIndex = 85;
+            this.date_ftr_tarih.UseCustomBackColor = true;
+            this.date_ftr_tarih.UseCustomForeColor = true;
+            this.date_ftr_tarih.UseStyleColors = true;
             // 
             // FaturaGiris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 791);
+            this.ClientSize = new System.Drawing.Size(424, 693);
+            this.Controls.Add(this.date_ftr_tarih);
             this.Controls.Add(this.btn_kaydet);
             this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.rcb_aciklama);
@@ -645,7 +683,6 @@
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.txt_ftr_vade);
             this.Controls.Add(this.lbl_tarih);
-            this.Controls.Add(this.txt_ftr_tarih);
             this.Controls.Add(this.cmb_firma);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.metroLabel2);
@@ -662,6 +699,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FaturaGiris";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Fatura Giriş";
             this.Load += new System.EventHandler(this.FaturaGiris_Load);
@@ -686,7 +724,6 @@
         public System.Windows.Forms.ComboBox cmb_firma;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel lbl_tarih;
-        private MetroFramework.Controls.MetroTextBox txt_ftr_tarih;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox txt_ftr_vade;
         private MetroFramework.Controls.MetroDateTime date_alarm;
@@ -702,5 +739,12 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private System.Windows.Forms.RichTextBox rcb_aciklama;
         private MetroFramework.Controls.MetroButton btn_kaydet;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand;
+        private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter1;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommandProjeNo;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommandFirmalar;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommandSatinAlmaNo;
+        private MetroFramework.Controls.MetroDateTime date_ftr_tarih;
     }
 }

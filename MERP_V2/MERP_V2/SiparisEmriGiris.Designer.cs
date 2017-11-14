@@ -495,6 +495,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SiparisEmriGiris";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Sipariş Emri Giriş";
             this.Load += new System.EventHandler(this.SiparisEmriGiris_Load);

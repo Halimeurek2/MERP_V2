@@ -156,7 +156,7 @@
             this.btn_ozetRapor});
             this.toolStrip1.Location = new System.Drawing.Point(20, 60);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1338, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1338, 39);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -165,101 +165,102 @@
             this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(77, 22);
+            this.toolStripLabel2.Size = new System.Drawing.Size(77, 36);
             this.toolStripLabel2.Text = "Proje No :";
             // 
             // cmb_proje_no
             // 
             this.cmb_proje_no.Name = "cmb_proje_no";
-            this.cmb_proje_no.Size = new System.Drawing.Size(121, 25);
+            this.cmb_proje_no.Size = new System.Drawing.Size(121, 39);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(94, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(94, 36);
             this.toolStripLabel1.Text = "Proje Bütçe :";
             // 
             // lbl_projeButce
             // 
             this.lbl_projeButce.Name = "lbl_projeButce";
-            this.lbl_projeButce.Size = new System.Drawing.Size(13, 22);
+            this.lbl_projeButce.Size = new System.Drawing.Size(13, 36);
             this.lbl_projeButce.Text = "0";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(145, 22);
+            this.toolStripLabel3.Size = new System.Drawing.Size(145, 36);
             this.toolStripLabel3.Text = "Proje Bütçe (EURO) :";
             // 
             // lbl_projeEuro
             // 
             this.lbl_projeEuro.Name = "lbl_projeEuro";
-            this.lbl_projeEuro.Size = new System.Drawing.Size(13, 22);
+            this.lbl_projeEuro.Size = new System.Drawing.Size(13, 36);
             this.lbl_projeEuro.Text = "0";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripLabel4
             // 
             this.toolStripLabel4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(122, 22);
+            this.toolStripLabel4.Size = new System.Drawing.Size(122, 36);
             this.toolStripLabel4.Text = "Toplam Maliyet :";
             // 
             // lbl_topMaliyet
             // 
             this.lbl_topMaliyet.Name = "lbl_topMaliyet";
-            this.lbl_topMaliyet.Size = new System.Drawing.Size(13, 22);
+            this.lbl_topMaliyet.Size = new System.Drawing.Size(13, 36);
             this.lbl_topMaliyet.Text = "0";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(115, 22);
+            this.toolStripLabel5.Size = new System.Drawing.Size(115, 36);
             this.toolStripLabel5.Text = "Geçilen Sipariş :";
             // 
             // lbl_siparis
             // 
             this.lbl_siparis.Name = "lbl_siparis";
-            this.lbl_siparis.Size = new System.Drawing.Size(13, 22);
+            this.lbl_siparis.Size = new System.Drawing.Size(13, 36);
             this.lbl_siparis.Text = "0";
             // 
             // btn_frmRapor
             // 
             this.btn_frmRapor.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btn_frmRapor.Image = global::MERP_V2.Properties.Resources.appbar_cabinet_files;
+            this.btn_frmRapor.Image = global::MERP_V2.Properties.Resources.if_trends_1054952;
+            this.btn_frmRapor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_frmRapor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_frmRapor.Name = "btn_frmRapor";
-            this.btn_frmRapor.Size = new System.Drawing.Size(91, 22);
+            this.btn_frmRapor.Size = new System.Drawing.Size(107, 36);
             this.btn_frmRapor.Text = "Firma Rapor";
             this.btn_frmRapor.Click += new System.EventHandler(this.btn_frmRapor_Click);
             // 
@@ -268,15 +269,16 @@
             this.toolStripSeparator4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
             // 
             // btn_ozetRapor
             // 
             this.btn_ozetRapor.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btn_ozetRapor.Image = global::MERP_V2.Properties.Resources.appbar_graph_line_up;
+            this.btn_ozetRapor.Image = global::MERP_V2.Properties.Resources.if_piechart_1055011;
+            this.btn_ozetRapor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_ozetRapor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_ozetRapor.Name = "btn_ozetRapor";
-            this.btn_ozetRapor.Size = new System.Drawing.Size(85, 22);
+            this.btn_ozetRapor.Size = new System.Drawing.Size(101, 36);
             this.btn_ozetRapor.Text = "Özet Rapor";
             this.btn_ozetRapor.Click += new System.EventHandler(this.btn_ozetRapor_Click);
             // 
@@ -430,15 +432,15 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(20, 85);
+            this.splitContainer1.Location = new System.Drawing.Point(20, 99);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1338, 675);
-            this.splitContainer1.SplitterDistance = 356;
+            this.splitContainer1.Size = new System.Drawing.Size(1338, 661);
+            this.splitContainer1.SplitterDistance = 348;
             this.splitContainer1.SplitterIncrement = 2;
             this.splitContainer1.TabIndex = 4;
             // 
@@ -456,8 +458,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.toolStrip3);
-            this.splitContainer2.Size = new System.Drawing.Size(1338, 356);
-            this.splitContainer2.SplitterDistance = 327;
+            this.splitContainer2.Size = new System.Drawing.Size(1338, 348);
+            this.splitContainer2.SplitterDistance = 319;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -473,8 +475,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer3.Size = new System.Drawing.Size(1338, 327);
-            this.splitContainer3.SplitterDistance = 332;
+            this.splitContainer3.Size = new System.Drawing.Size(1338, 319);
+            this.splitContainer3.SplitterDistance = 331;
             this.splitContainer3.TabIndex = 0;
             // 
             // chart1
@@ -491,7 +493,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(332, 327);
+            this.chart1.Size = new System.Drawing.Size(331, 319);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -508,7 +510,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer4.Size = new System.Drawing.Size(1002, 327);
+            this.splitContainer4.Size = new System.Drawing.Size(1003, 319);
             this.splitContainer4.SplitterDistance = 332;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -526,7 +528,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(332, 327);
+            this.chart2.Size = new System.Drawing.Size(332, 319);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
             // 
@@ -543,7 +545,7 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.chart4);
-            this.splitContainer5.Size = new System.Drawing.Size(666, 327);
+            this.splitContainer5.Size = new System.Drawing.Size(667, 319);
             this.splitContainer5.SplitterDistance = 332;
             this.splitContainer5.TabIndex = 0;
             // 
@@ -561,7 +563,7 @@
             series3.Legend = "Legend1";
             series3.Name = "Series1";
             this.chart3.Series.Add(series3);
-            this.chart3.Size = new System.Drawing.Size(332, 327);
+            this.chart3.Size = new System.Drawing.Size(332, 319);
             this.chart3.TabIndex = 1;
             this.chart3.Text = "chart3";
             // 
@@ -579,7 +581,7 @@
             series4.Legend = "Legend1";
             series4.Name = "Series1";
             this.chart4.Series.Add(series4);
-            this.chart4.Size = new System.Drawing.Size(330, 327);
+            this.chart4.Size = new System.Drawing.Size(331, 319);
             this.chart4.TabIndex = 1;
             this.chart4.Text = "chart4";
             // 

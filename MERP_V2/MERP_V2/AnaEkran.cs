@@ -11,15 +11,11 @@ namespace MERP_V2
         MySqlCommand myCommand;
         MySqlDataAdapter da;
         DataTable dt = new DataTable();
-
-        int panelWidth;
-        bool Hided;
+        
 
         public AnaEkran()
         {
             InitializeComponent();
-            panelWidth = pnl_cokacil.Width;
-            Hided = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -86,33 +82,9 @@ namespace MERP_V2
             frmProjeyeGoreRapor.Show();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void btn_grafik_Click(object sender, EventArgs e)
         {
-            if(Hided)
-            {
-                pnl_cokacil.Width = pnl_cokacil.Width + 20;
-                if(pnl_cokacil.Width>=panelWidth)
-                {
-                    timerPanel.Stop();
-                    Hided = false;
-                    this.Refresh();
-                }
-            }
-            else
-            {
-                pnl_cokacil.Width = pnl_cokacil.Width - 20;
-                if(pnl_cokacil.Width<=0)
-                {
-                    timerPanel.Stop();
-                    Hided = true;
-                    this.Refresh();
-                }
-            }
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            timerPanel.Start();
+           
         }
     }
 }

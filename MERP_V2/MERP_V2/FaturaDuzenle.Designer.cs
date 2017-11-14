@@ -129,7 +129,7 @@
             // 
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel8.Location = new System.Drawing.Point(34, 641);
+            this.metroLabel8.Location = new System.Drawing.Point(34, 528);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(69, 19);
             this.metroLabel8.Style = MetroFramework.MetroColorStyle.Red;
@@ -144,7 +144,7 @@
             // 
             this.rcb_aciklama.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rcb_aciklama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rcb_aciklama.Location = new System.Drawing.Point(132, 641);
+            this.rcb_aciklama.Location = new System.Drawing.Point(132, 536);
             this.rcb_aciklama.Name = "rcb_aciklama";
             this.rcb_aciklama.Size = new System.Drawing.Size(219, 87);
             this.rcb_aciklama.TabIndex = 121;
@@ -154,7 +154,7 @@
             // 
             this.lbl_tip.AutoSize = true;
             this.lbl_tip.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_tip.Location = new System.Drawing.Point(25, 591);
+            this.lbl_tip.Location = new System.Drawing.Point(25, 498);
             this.lbl_tip.Name = "lbl_tip";
             this.lbl_tip.Size = new System.Drawing.Size(78, 19);
             this.lbl_tip.Style = MetroFramework.MetroColorStyle.Red;
@@ -176,7 +176,7 @@
             "Elektronik",
             "Genel Giderler",
             "Kesilen"});
-            this.cmb_ftr_tip.Location = new System.Drawing.Point(132, 586);
+            this.cmb_ftr_tip.Location = new System.Drawing.Point(132, 493);
             this.cmb_ftr_tip.Name = "cmb_ftr_tip";
             this.cmb_ftr_tip.Size = new System.Drawing.Size(184, 29);
             this.cmb_ftr_tip.Style = MetroFramework.MetroColorStyle.Red;
@@ -191,7 +191,7 @@
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel5.Location = new System.Drawing.Point(12, 541);
+            this.metroLabel5.Location = new System.Drawing.Point(12, 460);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(91, 19);
             this.metroLabel5.Style = MetroFramework.MetroColorStyle.Red;
@@ -217,7 +217,7 @@
             this.txt_avans.CustomButton.UseSelectable = true;
             this.txt_avans.CustomButton.Visible = false;
             this.txt_avans.Lines = new string[0];
-            this.txt_avans.Location = new System.Drawing.Point(132, 540);
+            this.txt_avans.Location = new System.Drawing.Point(132, 458);
             this.txt_avans.MaxLength = 32767;
             this.txt_avans.Name = "txt_avans";
             this.txt_avans.PasswordChar = '\0';
@@ -241,7 +241,7 @@
             // 
             this.metroLabel9.AutoSize = true;
             this.metroLabel9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel9.Location = new System.Drawing.Point(56, 494);
+            this.metroLabel9.Location = new System.Drawing.Point(56, 422);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(47, 19);
             this.metroLabel9.Style = MetroFramework.MetroColorStyle.Red;
@@ -264,7 +264,7 @@
             "TRY",
             "CHF",
             "GBP"});
-            this.cmb_birim.Location = new System.Drawing.Point(132, 488);
+            this.cmb_birim.Location = new System.Drawing.Point(132, 417);
             this.cmb_birim.Name = "cmb_birim";
             this.cmb_birim.Size = new System.Drawing.Size(184, 29);
             this.cmb_birim.Style = MetroFramework.MetroColorStyle.Red;
@@ -279,7 +279,7 @@
             // 
             this.lbl_tutar.AutoSize = true;
             this.lbl_tutar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_tutar.Location = new System.Drawing.Point(13, 443);
+            this.lbl_tutar.Location = new System.Drawing.Point(13, 384);
             this.lbl_tutar.Name = "lbl_tutar";
             this.lbl_tutar.Size = new System.Drawing.Size(90, 19);
             this.lbl_tutar.Style = MetroFramework.MetroColorStyle.Red;
@@ -305,7 +305,7 @@
             this.txt_ftr_tutar.CustomButton.UseSelectable = true;
             this.txt_ftr_tutar.CustomButton.Visible = false;
             this.txt_ftr_tutar.Lines = new string[0];
-            this.txt_ftr_tutar.Location = new System.Drawing.Point(132, 442);
+            this.txt_ftr_tutar.Location = new System.Drawing.Point(132, 382);
             this.txt_ftr_tutar.MaxLength = 32767;
             this.txt_ftr_tutar.Name = "txt_ftr_tutar";
             this.txt_ftr_tutar.PasswordChar = '\0';
@@ -327,7 +327,7 @@
             // 
             // date_alarm
             // 
-            this.date_alarm.Location = new System.Drawing.Point(132, 390);
+            this.date_alarm.Location = new System.Drawing.Point(132, 341);
             this.date_alarm.MinimumSize = new System.Drawing.Size(0, 29);
             this.date_alarm.Name = "date_alarm";
             this.date_alarm.Size = new System.Drawing.Size(184, 29);
@@ -337,7 +337,7 @@
             // 
             this.ck_alarm.AutoSize = true;
             this.ck_alarm.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ck_alarm.Location = new System.Drawing.Point(338, 398);
+            this.ck_alarm.Location = new System.Drawing.Point(338, 349);
             this.ck_alarm.Name = "ck_alarm";
             this.ck_alarm.Size = new System.Drawing.Size(63, 15);
             this.ck_alarm.Style = MetroFramework.MetroColorStyle.Red;
@@ -353,7 +353,7 @@
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel3.Location = new System.Drawing.Point(57, 345);
+            this.metroLabel3.Location = new System.Drawing.Point(57, 305);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(46, 19);
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.Red;
@@ -379,7 +379,7 @@
             this.txt_ftr_vade.CustomButton.UseSelectable = true;
             this.txt_ftr_vade.CustomButton.Visible = false;
             this.txt_ftr_vade.Lines = new string[0];
-            this.txt_ftr_vade.Location = new System.Drawing.Point(132, 344);
+            this.txt_ftr_vade.Location = new System.Drawing.Point(132, 306);
             this.txt_ftr_vade.MaxLength = 32767;
             this.txt_ftr_vade.Name = "txt_ftr_vade";
             this.txt_ftr_vade.PasswordChar = '\0';
@@ -403,7 +403,7 @@
             // 
             this.lbl_tarih.AutoSize = true;
             this.lbl_tarih.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_tarih.Location = new System.Drawing.Point(14, 299);
+            this.lbl_tarih.Location = new System.Drawing.Point(14, 267);
             this.lbl_tarih.Name = "lbl_tarih";
             this.lbl_tarih.Size = new System.Drawing.Size(89, 19);
             this.lbl_tarih.Style = MetroFramework.MetroColorStyle.Red;
@@ -429,7 +429,7 @@
             this.txt_ftr_tarih.CustomButton.UseSelectable = true;
             this.txt_ftr_tarih.CustomButton.Visible = false;
             this.txt_ftr_tarih.Lines = new string[0];
-            this.txt_ftr_tarih.Location = new System.Drawing.Point(132, 298);
+            this.txt_ftr_tarih.Location = new System.Drawing.Point(132, 265);
             this.txt_ftr_tarih.MaxLength = 32767;
             this.txt_ftr_tarih.Name = "txt_ftr_tarih";
             this.txt_ftr_tarih.PasswordChar = '\0';
@@ -455,7 +455,7 @@
             this.cmb_firma.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_firma.BackColor = System.Drawing.Color.White;
             this.cmb_firma.FormattingEnabled = true;
-            this.cmb_firma.Location = new System.Drawing.Point(132, 254);
+            this.cmb_firma.Location = new System.Drawing.Point(132, 232);
             this.cmb_firma.Name = "cmb_firma";
             this.cmb_firma.Size = new System.Drawing.Size(184, 21);
             this.cmb_firma.TabIndex = 106;
@@ -464,7 +464,7 @@
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel6.Location = new System.Drawing.Point(26, 253);
+            this.metroLabel6.Location = new System.Drawing.Point(26, 231);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(77, 19);
             this.metroLabel6.Style = MetroFramework.MetroColorStyle.Red;
@@ -479,7 +479,7 @@
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel2.Location = new System.Drawing.Point(28, 209);
+            this.metroLabel2.Location = new System.Drawing.Point(28, 195);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(75, 19);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Red;
@@ -494,7 +494,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel1.Location = new System.Drawing.Point(34, 159);
+            this.metroLabel1.Location = new System.Drawing.Point(34, 157);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(69, 19);
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.Red;
@@ -520,7 +520,7 @@
             this.txt_fatura_no.CustomButton.UseSelectable = true;
             this.txt_fatura_no.CustomButton.Visible = false;
             this.txt_fatura_no.Lines = new string[0];
-            this.txt_fatura_no.Location = new System.Drawing.Point(132, 208);
+            this.txt_fatura_no.Location = new System.Drawing.Point(132, 197);
             this.txt_fatura_no.MaxLength = 32767;
             this.txt_fatura_no.Name = "txt_fatura_no";
             this.txt_fatura_no.PasswordChar = '\0';
@@ -561,7 +561,7 @@
             // btn_duzenle
             // 
             this.btn_duzenle.Highlight = true;
-            this.btn_duzenle.Location = new System.Drawing.Point(285, 737);
+            this.btn_duzenle.Location = new System.Drawing.Point(285, 636);
             this.btn_duzenle.Name = "btn_duzenle";
             this.btn_duzenle.Size = new System.Drawing.Size(116, 43);
             this.btn_duzenle.Style = MetroFramework.MetroColorStyle.Red;
@@ -609,7 +609,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 788);
+            this.ClientSize = new System.Drawing.Size(424, 693);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.btn_duzenle);
@@ -642,6 +642,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FaturaDuzenle";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Fatura Düzenle";
             this.Load += new System.EventHandler(this.FaturaDuzenle_Load);

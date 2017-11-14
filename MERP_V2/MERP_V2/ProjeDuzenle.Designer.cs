@@ -558,6 +558,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ProjeDuzenle";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Proje Düzenle";
             this.Load += new System.EventHandler(this.ProjeDuzenle_Load);

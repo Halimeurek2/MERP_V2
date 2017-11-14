@@ -65,6 +65,7 @@
     <Compile Include="AnaEkran.Designer.cs">
       <DependentUpon>AnaEkran.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBConnect.cs" />
     <Compile Include="FaturaDuzenle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,12 +90,19 @@
     <Compile Include="FirmaRapor.Designer.cs">
       <DependentUpon>FirmaRapor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMessageBox.Designer.cs">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="HarcamaOngorusu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HarcamaOngorusu.Designer.cs">
       <DependentUpon>HarcamaOngorusu.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelperFunctions.cs" />
     <Compile Include="OdenecekFaturalar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FirmaRapor.resx">
       <DependentUpon>FirmaRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMessageBox.resx">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HarcamaOngorusu.resx">
       <DependentUpon>HarcamaOngorusu.cs</DependentUpon>
@@ -246,6 +257,99 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Picture2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_calendar_1055101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_calendar_1055101 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_compose_1055085.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_easel_1055067.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_check_1055094.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_power_1055002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_trends_1054952.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_rocket_1054990.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_browser_1055104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_cart_1055098.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_pin_1055010.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_bomb_1055109.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_piechart_1055011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_megaphone_1055028.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Money_728958.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_News_728959.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_PieChart_728965.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Calendar_728916.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Lightbulb_728950.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_BarChart_728905.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Info_728979.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Pin_728961.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_7_1320810.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_4_1320813.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Alarm_728899.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Fire_728986.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grafik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\malvefatu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cokaciil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.chevron.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.chevron.left.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

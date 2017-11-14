@@ -541,6 +541,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ProjeGiris";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Proje Giriş";
             this.Load += new System.EventHandler(this.ProjeGiris_Load);

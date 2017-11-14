@@ -513,6 +513,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SiparisEmriDuzenle";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Sipariş Emri Düzenle";
             this.Load += new System.EventHandler(this.SiparisEmriDuzenle_Load);
