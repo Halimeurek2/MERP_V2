@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaEkran));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.faturalarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,16 +54,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btn_grafik = new System.Windows.Forms.Button();
-            this.pnl_grafik = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
-            this.cmb_projeNo = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel8 = new System.Windows.Forms.ToolStripLabel();
-            this.cmb_yil = new System.Windows.Forms.ToolStripComboBox();
+            this.flw_fatura = new System.Windows.Forms.FlowLayoutPanel();
+            this.flw_tarih = new System.Windows.Forms.FlowLayoutPanel();
+            this.flw_butce = new System.Windows.Forms.FlowLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -81,7 +67,13 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.lbl_gbp = new System.Windows.Forms.ToolStripLabel();
+            this.cmb_Barprojeler = new System.Windows.Forms.ToolStripComboBox();
             this.miniToolStrip = new System.Windows.Forms.ToolStrip();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.flw_tarih2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flw_fatura2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flw_butce2 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -98,11 +90,9 @@
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.pnl_grafik.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.toolStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // mySqlConnection
@@ -143,14 +133,14 @@
             // faturaGirişToolStripMenuItem
             // 
             this.faturaGirişToolStripMenuItem.Name = "faturaGirişToolStripMenuItem";
-            this.faturaGirişToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.faturaGirişToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.faturaGirişToolStripMenuItem.Text = "Fatura Giriş";
             this.faturaGirişToolStripMenuItem.Click += new System.EventHandler(this.faturaGirişToolStripMenuItem_Click);
             // 
             // faturalarToolStripMenuItem1
             // 
             this.faturalarToolStripMenuItem1.Name = "faturalarToolStripMenuItem1";
-            this.faturalarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.faturalarToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.faturalarToolStripMenuItem1.Text = "Faturalar";
             this.faturalarToolStripMenuItem1.Click += new System.EventHandler(this.faturalarToolStripMenuItem1_Click);
             // 
@@ -258,7 +248,8 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.pnl_grafik);
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip1);
             this.splitContainer1.Size = new System.Drawing.Size(1534, 704);
             this.splitContainer1.SplitterDistance = 42;
@@ -372,118 +363,32 @@
             this.btn_grafik.UseVisualStyleBackColor = true;
             this.btn_grafik.Click += new System.EventHandler(this.btn_grafik_Click);
             // 
-            // pnl_grafik
+            // flw_fatura
             // 
-            this.pnl_grafik.Controls.Add(this.panel1);
-            this.pnl_grafik.Controls.Add(this.toolStrip2);
-            this.pnl_grafik.Location = new System.Drawing.Point(0, 0);
-            this.pnl_grafik.Name = "pnl_grafik";
-            this.pnl_grafik.Size = new System.Drawing.Size(378, 273);
-            this.pnl_grafik.TabIndex = 8;
-            this.pnl_grafik.Visible = false;
+            this.flw_fatura.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flw_fatura.Location = new System.Drawing.Point(0, 125);
+            this.flw_fatura.Name = "flw_fatura";
+            this.flw_fatura.Size = new System.Drawing.Size(1476, 47);
+            this.flw_fatura.TabIndex = 8;
             // 
-            // panel1
+            // flw_tarih
             // 
-            this.panel1.Controls.Add(this.chart1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(378, 246);
-            this.panel1.TabIndex = 8;
+            this.flw_tarih.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flw_tarih.Location = new System.Drawing.Point(0, 19);
+            this.flw_tarih.Name = "flw_tarih";
+            this.flw_tarih.Size = new System.Drawing.Size(1476, 47);
+            this.flw_tarih.TabIndex = 6;
             // 
-            // chart1
+            // flw_butce
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(0, 0);
-            this.chart1.Name = "chart1";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series2";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series3";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series4";
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Legend1";
-            series10.Name = "Series5";
-            this.chart1.Series.Add(series6);
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
-            this.chart1.Series.Add(series9);
-            this.chart1.Series.Add(series10);
-            this.chart1.Size = new System.Drawing.Size(378, 246);
-            this.chart1.TabIndex = 7;
-            this.chart1.Text = "chart1";
-            // 
-            // toolStrip2
-            // 
-            this.toolStrip2.BackColor = System.Drawing.Color.Transparent;
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel3,
-            this.toolStripLabel5,
-            this.cmb_projeNo,
-            this.toolStripSeparator3,
-            this.toolStripLabel8,
-            this.cmb_yil});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 246);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(378, 27);
-            this.toolStrip2.TabIndex = 6;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(109, 24);
-            this.toolStripLabel3.Text = "GRAFİK FİLTRE";
-            // 
-            // toolStripLabel5
-            // 
-            this.toolStripLabel5.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel5.Margin = new System.Windows.Forms.Padding(30, 1, 0, 2);
-            this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(62, 24);
-            this.toolStripLabel5.Text = "Proje No :";
-            // 
-            // cmb_projeNo
-            // 
-            this.cmb_projeNo.Name = "cmb_projeNo";
-            this.cmb_projeNo.Size = new System.Drawing.Size(121, 27);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(30, 0, 30, 0);
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripLabel8
-            // 
-            this.toolStripLabel8.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel8.Name = "toolStripLabel8";
-            this.toolStripLabel8.Size = new System.Drawing.Size(30, 15);
-            this.toolStripLabel8.Text = "Yıl :";
-            // 
-            // cmb_yil
-            // 
-            this.cmb_yil.Items.AddRange(new object[] {
-            "2015",
-            "2016",
-            "2017",
-            "2018"});
-            this.cmb_yil.Name = "cmb_yil";
-            this.cmb_yil.Size = new System.Drawing.Size(121, 23);
+            this.flw_butce.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flw_butce.Location = new System.Drawing.Point(0, 72);
+            this.flw_butce.Name = "flw_butce";
+            this.flw_butce.Size = new System.Drawing.Size(1476, 47);
+            this.flw_butce.TabIndex = 7;
             // 
             // toolStrip1
             // 
@@ -499,7 +404,8 @@
             this.lbl_eur,
             this.toolStripSeparator1,
             this.toolStripLabel6,
-            this.lbl_gbp});
+            this.lbl_gbp,
+            this.cmb_Barprojeler});
             this.toolStrip1.Location = new System.Drawing.Point(0, 679);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1488, 25);
@@ -568,6 +474,17 @@
             this.lbl_gbp.Size = new System.Drawing.Size(14, 22);
             this.lbl_gbp.Text = "0";
             // 
+            // cmb_Barprojeler
+            // 
+            this.cmb_Barprojeler.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.cmb_Barprojeler.Items.AddRange(new object[] {
+            "910.20",
+            "910.23",
+            "910.10"});
+            this.cmb_Barprojeler.Name = "cmb_Barprojeler";
+            this.cmb_Barprojeler.Size = new System.Drawing.Size(121, 25);
+            this.cmb_Barprojeler.SelectedIndexChanged += new System.EventHandler(this.cmb_Barprojeler_SelectedIndexChanged);
+            // 
             // miniToolStrip
             // 
             this.miniToolStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDown;
@@ -580,6 +497,61 @@
             this.miniToolStrip.Name = "miniToolStrip";
             this.miniToolStrip.Size = new System.Drawing.Size(546, 25);
             this.miniToolStrip.TabIndex = 3;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.flw_tarih);
+            this.groupBox1.Controls.Add(this.flw_fatura);
+            this.groupBox1.Controls.Add(this.flw_butce);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1482, 183);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "PROJE BAR :";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.flw_tarih2);
+            this.groupBox2.Controls.Add(this.flw_fatura2);
+            this.groupBox2.Controls.Add(this.flw_butce2);
+            this.groupBox2.Location = new System.Drawing.Point(3, 192);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1482, 183);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "PROJE BAR :";
+            // 
+            // flw_tarih2
+            // 
+            this.flw_tarih2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flw_tarih2.Location = new System.Drawing.Point(0, 19);
+            this.flw_tarih2.Name = "flw_tarih2";
+            this.flw_tarih2.Size = new System.Drawing.Size(1476, 47);
+            this.flw_tarih2.TabIndex = 6;
+            // 
+            // flw_fatura2
+            // 
+            this.flw_fatura2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flw_fatura2.Location = new System.Drawing.Point(0, 125);
+            this.flw_fatura2.Name = "flw_fatura2";
+            this.flw_fatura2.Size = new System.Drawing.Size(1476, 47);
+            this.flw_fatura2.TabIndex = 8;
+            // 
+            // flw_butce2
+            // 
+            this.flw_butce2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flw_butce2.Location = new System.Drawing.Point(0, 72);
+            this.flw_butce2.Name = "flw_butce2";
+            this.flw_butce2.Size = new System.Drawing.Size(1476, 47);
+            this.flw_butce2.TabIndex = 7;
             // 
             // AnaEkran
             // 
@@ -616,14 +588,10 @@
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.pnl_grafik.ResumeLayout(false);
-            this.pnl_grafik.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -656,16 +624,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel pnl_grafik;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel5;
-        private System.Windows.Forms.ToolStripComboBox cmb_projeNo;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel8;
-        private System.Windows.Forms.ToolStripComboBox cmb_yil;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
@@ -677,6 +635,15 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
         private System.Windows.Forms.ToolStripLabel lbl_gbp;
         private System.Windows.Forms.ToolStrip miniToolStrip;
+        private System.Windows.Forms.FlowLayoutPanel flw_fatura;
+        private System.Windows.Forms.FlowLayoutPanel flw_tarih;
+        private System.Windows.Forms.FlowLayoutPanel flw_butce;
+        private System.Windows.Forms.ToolStripComboBox cmb_Barprojeler;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.FlowLayoutPanel flw_tarih2;
+        private System.Windows.Forms.FlowLayoutPanel flw_fatura2;
+        private System.Windows.Forms.FlowLayoutPanel flw_butce2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
