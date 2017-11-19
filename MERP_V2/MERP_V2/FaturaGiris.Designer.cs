@@ -64,6 +64,7 @@
             this.mySqlCommandFirmalar = new MySql.Data.MySqlClient.MySqlCommand();
             this.mySqlCommandSatinAlmaNo = new MySql.Data.MySqlClient.MySqlCommand();
             this.date_ftr_tarih = new MetroFramework.Controls.MetroDateTime();
+            this.date_odendi = new MetroFramework.Controls.MetroDateTime();
             this.SuspendLayout();
             // 
             // cmb_avans
@@ -132,6 +133,7 @@
             this.cmb_durum.UseCustomForeColor = true;
             this.cmb_durum.UseSelectable = true;
             this.cmb_durum.UseStyleColors = true;
+            this.cmb_durum.CheckedChanged += new System.EventHandler(this.cmb_durum_CheckedChanged);
             // 
             // cmb_se
             // 
@@ -286,7 +288,7 @@
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel6.Location = new System.Drawing.Point(26, 240);
+            this.metroLabel6.Location = new System.Drawing.Point(26, 233);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(77, 19);
             this.metroLabel6.Style = MetroFramework.MetroColorStyle.Red;
@@ -301,7 +303,7 @@
             // 
             this.lbl_tarih.AutoSize = true;
             this.lbl_tarih.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_tarih.Location = new System.Drawing.Point(14, 273);
+            this.lbl_tarih.Location = new System.Drawing.Point(14, 270);
             this.lbl_tarih.Name = "lbl_tarih";
             this.lbl_tarih.Size = new System.Drawing.Size(89, 19);
             this.lbl_tarih.Style = MetroFramework.MetroColorStyle.Red;
@@ -346,6 +348,7 @@
             this.txt_ftr_vade.MaxLength = 32767;
             this.txt_ftr_vade.Name = "txt_ftr_vade";
             this.txt_ftr_vade.PasswordChar = '\0';
+            this.txt_ftr_vade.PromptText = "Gün olarak giriniz";
             this.txt_ftr_vade.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txt_ftr_vade.SelectedText = "";
             this.txt_ftr_vade.SelectionLength = 0;
@@ -359,6 +362,7 @@
             this.txt_ftr_vade.UseCustomForeColor = true;
             this.txt_ftr_vade.UseSelectable = true;
             this.txt_ftr_vade.UseStyleColors = true;
+            this.txt_ftr_vade.WaterMark = "Gün olarak giriniz";
             this.txt_ftr_vade.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_ftr_vade.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txt_ftr_vade.TextChanged += new System.EventHandler(this.txt_ftr_vade_TextChanged);
@@ -661,11 +665,25 @@
             this.date_ftr_tarih.UseCustomForeColor = true;
             this.date_ftr_tarih.UseStyleColors = true;
             // 
+            // date_odendi
+            // 
+            this.date_odendi.Location = new System.Drawing.Point(245, 71);
+            this.date_odendi.MinimumSize = new System.Drawing.Size(0, 29);
+            this.date_odendi.Name = "date_odendi";
+            this.date_odendi.Size = new System.Drawing.Size(156, 29);
+            this.date_odendi.Style = MetroFramework.MetroColorStyle.Red;
+            this.date_odendi.TabIndex = 102;
+            this.date_odendi.UseCustomBackColor = true;
+            this.date_odendi.UseCustomForeColor = true;
+            this.date_odendi.UseStyleColors = true;
+            this.date_odendi.Visible = false;
+            // 
             // FaturaGiris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 693);
+            this.Controls.Add(this.date_odendi);
             this.Controls.Add(this.date_ftr_tarih);
             this.Controls.Add(this.btn_kaydet);
             this.Controls.Add(this.metroLabel8);
@@ -746,5 +764,6 @@
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommandFirmalar;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommandSatinAlmaNo;
         private MetroFramework.Controls.MetroDateTime date_ftr_tarih;
+        public MetroFramework.Controls.MetroDateTime date_odendi;
     }
 }

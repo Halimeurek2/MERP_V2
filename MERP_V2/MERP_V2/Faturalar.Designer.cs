@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Faturalar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.txt_fatura_no = new System.Windows.Forms.ToolStripTextBox();
@@ -43,8 +43,8 @@
             this.cmb_firma = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.txt_tip = new System.Windows.Forms.ToolStripTextBox();
+            this.btn_temizle = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.lbl_elektronik = new System.Windows.Forms.ToolStripLabel();
@@ -60,20 +60,16 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.lbl_toplam = new System.Windows.Forms.ToolStripLabel();
-            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgw_faturalar = new MetroFramework.Controls.MetroGrid();
+            this.mySqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+            this.mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
+            this.mySqlDataAdapter = new MySql.Data.MySqlClient.MySqlDataAdapter();
+            this.mySqlCommandProjeler = new MySql.Data.MySqlClient.MySqlCommand();
+            this.mySqlCommandFirmalar = new MySql.Data.MySqlClient.MySqlCommand();
+            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_faturalar)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -91,8 +87,8 @@
             this.cmb_firma,
             this.toolStripSeparator5,
             this.toolStripLabel4,
-            this.toolStripTextBox2,
-            this.toolStripButton1});
+            this.txt_tip,
+            this.btn_temizle});
             this.toolStrip1.Location = new System.Drawing.Point(20, 60);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1346, 25);
@@ -109,6 +105,7 @@
             // 
             this.txt_fatura_no.Name = "txt_fatura_no";
             this.txt_fatura_no.Size = new System.Drawing.Size(100, 25);
+            this.txt_fatura_no.TextChanged += new System.EventHandler(this.txt_fatura_no_TextChanged);
             // 
             // toolStripSeparator6
             // 
@@ -124,8 +121,12 @@
             // 
             // cmb_proje_no
             // 
+            this.cmb_proje_no.Items.AddRange(new object[] {
+            "",
+            "Hepsi"});
             this.cmb_proje_no.Name = "cmb_proje_no";
             this.cmb_proje_no.Size = new System.Drawing.Size(121, 25);
+            this.cmb_proje_no.SelectedIndexChanged += new System.EventHandler(this.cmb_proje_no_SelectedIndexChanged);
             // 
             // toolStripSeparator7
             // 
@@ -141,8 +142,13 @@
             // 
             // cmb_firma
             // 
+            this.cmb_firma.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_firma.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_firma.Items.AddRange(new object[] {
+            ""});
             this.cmb_firma.Name = "cmb_firma";
             this.cmb_firma.Size = new System.Drawing.Size(121, 25);
+            this.cmb_firma.SelectedIndexChanged += new System.EventHandler(this.cmb_firma_SelectedIndexChanged);
             // 
             // toolStripSeparator5
             // 
@@ -156,20 +162,22 @@
             this.toolStripLabel4.Size = new System.Drawing.Size(69, 22);
             this.toolStripLabel4.Text = "Fatura Tipi :";
             // 
-            // toolStripTextBox2
+            // txt_tip
             // 
-            this.toolStripTextBox2.Name = "toolStripTextBox2";
-            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 25);
+            this.txt_tip.Name = "txt_tip";
+            this.txt_tip.Size = new System.Drawing.Size(100, 25);
+            this.txt_tip.TextChanged += new System.EventHandler(this.txt_tip_TextChanged);
             // 
-            // toolStripButton1
+            // btn_temizle
             // 
-            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton1.ForeColor = System.Drawing.Color.Red;
-            this.toolStripButton1.Image = global::MERP_V2.Properties.Resources.appbar_refresh;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(68, 22);
-            this.toolStripButton1.Text = "Temizle";
+            this.btn_temizle.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btn_temizle.ForeColor = System.Drawing.Color.Red;
+            this.btn_temizle.Image = global::MERP_V2.Properties.Resources.appbar_refresh;
+            this.btn_temizle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_temizle.Name = "btn_temizle";
+            this.btn_temizle.Size = new System.Drawing.Size(68, 22);
+            this.btn_temizle.Text = "Temizle";
+            this.btn_temizle.Click += new System.EventHandler(this.btn_temizle_Click);
             // 
             // toolStrip2
             // 
@@ -281,6 +289,7 @@
             this.btn_duzenle.Name = "btn_duzenle";
             this.btn_duzenle.Size = new System.Drawing.Size(74, 23);
             this.btn_duzenle.Text = "DÜZENLE";
+            this.btn_duzenle.Click += new System.EventHandler(this.btn_duzenle_Click);
             // 
             // toolStripSeparator1
             // 
@@ -302,117 +311,101 @@
             this.lbl_toplam.Size = new System.Drawing.Size(13, 23);
             this.lbl_toplam.Text = "0";
             // 
-            // metroGrid1
+            // dgw_faturalar
             // 
-            this.metroGrid1.AllowUserToResizeRows = false;
-            this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.metroGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroGrid1.EnableHeadersVisualStyles = false;
-            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(20, 85);
-            this.metroGrid1.Name = "metroGrid1";
-            this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(1346, 657);
-            this.metroGrid1.TabIndex = 3;
+            this.dgw_faturalar.AllowUserToResizeRows = false;
+            this.dgw_faturalar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgw_faturalar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgw_faturalar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgw_faturalar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgw_faturalar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgw_faturalar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgw_faturalar.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgw_faturalar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgw_faturalar.EnableHeadersVisualStyles = false;
+            this.dgw_faturalar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgw_faturalar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgw_faturalar.Location = new System.Drawing.Point(20, 85);
+            this.dgw_faturalar.Name = "dgw_faturalar";
+            this.dgw_faturalar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgw_faturalar.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgw_faturalar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgw_faturalar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgw_faturalar.Size = new System.Drawing.Size(1346, 657);
+            this.dgw_faturalar.TabIndex = 3;
+            this.dgw_faturalar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_faturalar_CellClick);
+            this.dgw_faturalar.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgw_faturalar_RowHeaderMouseClick);
             // 
-            // Column1
+            // mySqlCommand
             // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
+            this.mySqlCommand.CacheAge = 60;
+            this.mySqlCommand.CommandText = "SELECT * FROM (SELECT * FROM db_faturalar ORDER BY fatura_id DESC LIMIT 200) as r" +
+    " ORDER BY fatura_id";
+            this.mySqlCommand.Connection = this.mySqlConnection;
+            this.mySqlCommand.EnableCaching = false;
+            this.mySqlCommand.Transaction = null;
             // 
-            // Column2
+            // mySqlConnection
             // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
+            this.mySqlConnection.ConnectionString = "server=localhost;database=merp_dbv1;user id=root;password=root";
             // 
-            // Column3
+            // mySqlDataAdapter
             // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
+            this.mySqlDataAdapter.DeleteCommand = null;
+            this.mySqlDataAdapter.InsertCommand = null;
+            this.mySqlDataAdapter.SelectCommand = this.mySqlCommand;
+            this.mySqlDataAdapter.UpdateCommand = null;
             // 
-            // Column4
+            // mySqlCommandProjeler
             // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
+            this.mySqlCommandProjeler.CacheAge = 60;
+            this.mySqlCommandProjeler.CommandText = "SELECT DISTINCT proje_no FROM db_projeler";
+            this.mySqlCommandProjeler.Connection = this.mySqlConnection;
+            this.mySqlCommandProjeler.EnableCaching = false;
+            this.mySqlCommandProjeler.Transaction = null;
             // 
-            // Column5
+            // mySqlCommandFirmalar
             // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
+            this.mySqlCommandFirmalar.CacheAge = 60;
+            this.mySqlCommandFirmalar.CommandText = "SELECT DISTINCT fatura_firma FROM db_faturalar";
+            this.mySqlCommandFirmalar.Connection = this.mySqlConnection;
+            this.mySqlCommandFirmalar.EnableCaching = false;
+            this.mySqlCommandFirmalar.Transaction = null;
             // 
-            // Column6
+            // mySqlCommand1
             // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Column9";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Column10";
-            this.Column10.Name = "Column10";
+            this.mySqlCommand1.CacheAge = 60;
+            this.mySqlCommand1.Connection = this.mySqlConnection;
+            this.mySqlCommand1.EnableCaching = false;
+            this.mySqlCommand1.Transaction = null;
             // 
             // Faturalar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1386, 788);
-            this.Controls.Add(this.metroGrid1);
+            this.Controls.Add(this.dgw_faturalar);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Faturalar";
@@ -423,7 +416,7 @@
             this.toolStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_faturalar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,8 +431,8 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.ToolStripComboBox cmb_firma;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripTextBox txt_tip;
+        private System.Windows.Forms.ToolStripButton btn_temizle;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         private System.Windows.Forms.ToolStripLabel lbl_elektronik;
@@ -449,17 +442,7 @@
         private System.Windows.Forms.ToolStripLabel lbl_gnlgiderler;
         private System.Windows.Forms.ToolStripButton btn_sil;
         private System.Windows.Forms.ToolStripButton btn_duzenle;
-        private MetroFramework.Controls.MetroGrid metroGrid1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private MetroFramework.Controls.MetroGrid dgw_faturalar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
@@ -469,5 +452,11 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
+        private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommandProjeler;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommandFirmalar;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
     }
 }

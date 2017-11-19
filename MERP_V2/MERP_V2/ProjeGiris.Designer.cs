@@ -52,6 +52,8 @@
             this.rcb_aciklama = new System.Windows.Forms.RichTextBox();
             this.btn_harcamalar = new MetroFramework.Controls.MetroButton();
             this.btn_kaydet = new MetroFramework.Controls.MetroButton();
+            this.mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
+            this.mySqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
             this.SuspendLayout();
             // 
             // rbProje
@@ -452,6 +454,7 @@
             this.txt_vade.WaterMark = "Gün olarak giriniz";
             this.txt_vade.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_vade.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_vade.TextChanged += new System.EventHandler(this.txt_vade_TextChanged);
             // 
             // metroLabel9
             // 
@@ -508,6 +511,18 @@
             this.btn_kaydet.UseCustomForeColor = true;
             this.btn_kaydet.UseSelectable = true;
             this.btn_kaydet.UseStyleColors = true;
+            this.btn_kaydet.Click += new System.EventHandler(this.btn_kaydet_Click);
+            // 
+            // mySqlConnection
+            // 
+            this.mySqlConnection.ConnectionString = "server=localhost;database=merp_dbv1;user id=root;password=root";
+            // 
+            // mySqlCommand
+            // 
+            this.mySqlCommand.CacheAge = 60;
+            this.mySqlCommand.Connection = this.mySqlConnection;
+            this.mySqlCommand.EnableCaching = false;
+            this.mySqlCommand.Transaction = null;
             // 
             // ProjeGiris
             // 
@@ -576,5 +591,7 @@
         private System.Windows.Forms.RichTextBox rcb_aciklama;
         private MetroFramework.Controls.MetroButton btn_harcamalar;
         private MetroFramework.Controls.MetroButton btn_kaydet;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand;
     }
 }

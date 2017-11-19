@@ -51,6 +51,8 @@
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.rcb_aciklama = new System.Windows.Forms.RichTextBox();
             this.btn_kaydet = new MetroFramework.Controls.MetroButton();
+            this.mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
+            this.mySqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
             this.SuspendLayout();
             // 
             // rbVerilen
@@ -463,6 +465,18 @@
             this.btn_kaydet.UseCustomForeColor = true;
             this.btn_kaydet.UseSelectable = true;
             this.btn_kaydet.UseStyleColors = true;
+            this.btn_kaydet.Click += new System.EventHandler(this.btn_kaydet_Click);
+            // 
+            // mySqlConnection
+            // 
+            this.mySqlConnection.ConnectionString = "server=localhost;database=merp_dbv1;user id=root;password=root";
+            // 
+            // mySqlCommand
+            // 
+            this.mySqlCommand.CacheAge = 60;
+            this.mySqlCommand.Connection = this.mySqlConnection;
+            this.mySqlCommand.EnableCaching = false;
+            this.mySqlCommand.Transaction = null;
             // 
             // SiparisEmriGiris
             // 
@@ -529,5 +543,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private System.Windows.Forms.RichTextBox rcb_aciklama;
         private MetroFramework.Controls.MetroButton btn_kaydet;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand;
     }
 }

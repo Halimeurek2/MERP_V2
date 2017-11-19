@@ -268,5 +268,17 @@ namespace MERP_V2
             else
             { this.Close(); }
         }
+
+        private void cmb_durum_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cmb_durum.Checked)
+            {
+                date_odendi.Visible = true;
+            }
+            else
+            {
+                date_odendi.Visible = false;
+            }
+        }
     }
 }
