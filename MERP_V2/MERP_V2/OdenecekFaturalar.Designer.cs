@@ -659,7 +659,7 @@
             this.metroTabPage1.HorizontalScrollbarSize = 0;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 41);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(751, 183);
+            this.metroTabPage1.Size = new System.Drawing.Size(657, 155);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "ELEKTRONİK";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -680,8 +680,8 @@
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.splitContainer8);
-            this.splitContainer7.Size = new System.Drawing.Size(751, 183);
-            this.splitContainer7.SplitterDistance = 55;
+            this.splitContainer7.Size = new System.Drawing.Size(657, 155);
+            this.splitContainer7.SplitterDistance = 46;
             this.splitContainer7.TabIndex = 3;
             // 
             // splitContainer13
@@ -697,8 +697,8 @@
             // splitContainer13.Panel2
             // 
             this.splitContainer13.Panel2.Controls.Add(this.lbl_elfrm1);
-            this.splitContainer13.Size = new System.Drawing.Size(751, 55);
-            this.splitContainer13.SplitterDistance = 309;
+            this.splitContainer13.Size = new System.Drawing.Size(657, 46);
+            this.splitContainer13.SplitterDistance = 270;
             this.splitContainer13.TabIndex = 36;
             // 
             // lbl_el1
@@ -707,7 +707,7 @@
             this.lbl_el1.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_el1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lbl_el1.ForeColor = System.Drawing.Color.Black;
-            this.lbl_el1.Location = new System.Drawing.Point(292, 0);
+            this.lbl_el1.Location = new System.Drawing.Point(253, 0);
             this.lbl_el1.Name = "lbl_el1";
             this.lbl_el1.Size = new System.Drawing.Size(17, 19);
             this.lbl_el1.Style = MetroFramework.MetroColorStyle.Red;
@@ -724,7 +724,7 @@
             this.lbl_elfrm1.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_elfrm1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lbl_elfrm1.ForeColor = System.Drawing.Color.Black;
-            this.lbl_elfrm1.Location = new System.Drawing.Point(421, 0);
+            this.lbl_elfrm1.Location = new System.Drawing.Point(366, 0);
             this.lbl_elfrm1.Name = "lbl_elfrm1";
             this.lbl_elfrm1.Size = new System.Drawing.Size(17, 19);
             this.lbl_elfrm1.Style = MetroFramework.MetroColorStyle.Red;
@@ -749,8 +749,8 @@
             // splitContainer8.Panel2
             // 
             this.splitContainer8.Panel2.Controls.Add(this.splitContainer15);
-            this.splitContainer8.Size = new System.Drawing.Size(751, 124);
-            this.splitContainer8.SplitterDistance = 58;
+            this.splitContainer8.Size = new System.Drawing.Size(657, 105);
+            this.splitContainer8.SplitterDistance = 49;
             this.splitContainer8.TabIndex = 0;
             // 
             // splitContainer14
@@ -766,8 +766,8 @@
             // splitContainer14.Panel2
             // 
             this.splitContainer14.Panel2.Controls.Add(this.lbl_elfrm2);
-            this.splitContainer14.Size = new System.Drawing.Size(751, 58);
-            this.splitContainer14.SplitterDistance = 309;
+            this.splitContainer14.Size = new System.Drawing.Size(657, 49);
+            this.splitContainer14.SplitterDistance = 270;
             this.splitContainer14.TabIndex = 0;
             // 
             // lbl_el2
@@ -776,7 +776,7 @@
             this.lbl_el2.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_el2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lbl_el2.ForeColor = System.Drawing.Color.Black;
-            this.lbl_el2.Location = new System.Drawing.Point(292, 0);
+            this.lbl_el2.Location = new System.Drawing.Point(253, 0);
             this.lbl_el2.Name = "lbl_el2";
             this.lbl_el2.Size = new System.Drawing.Size(17, 19);
             this.lbl_el2.Style = MetroFramework.MetroColorStyle.Red;
@@ -793,7 +793,7 @@
             this.lbl_elfrm2.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_elfrm2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lbl_elfrm2.ForeColor = System.Drawing.Color.Black;
-            this.lbl_elfrm2.Location = new System.Drawing.Point(421, 0);
+            this.lbl_elfrm2.Location = new System.Drawing.Point(366, 0);
             this.lbl_elfrm2.Name = "lbl_elfrm2";
             this.lbl_elfrm2.Size = new System.Drawing.Size(17, 19);
             this.lbl_elfrm2.Style = MetroFramework.MetroColorStyle.Red;
@@ -817,8 +817,8 @@
             // splitContainer15.Panel2
             // 
             this.splitContainer15.Panel2.Controls.Add(this.lbl_elfrm3);
-            this.splitContainer15.Size = new System.Drawing.Size(751, 62);
-            this.splitContainer15.SplitterDistance = 312;
+            this.splitContainer15.Size = new System.Drawing.Size(657, 52);
+            this.splitContainer15.SplitterDistance = 272;
             this.splitContainer15.TabIndex = 0;
             // 
             // lbl_el3
@@ -827,7 +827,7 @@
             this.lbl_el3.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_el3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lbl_el3.ForeColor = System.Drawing.Color.Black;
-            this.lbl_el3.Location = new System.Drawing.Point(295, 0);
+            this.lbl_el3.Location = new System.Drawing.Point(255, 0);
             this.lbl_el3.Name = "lbl_el3";
             this.lbl_el3.Size = new System.Drawing.Size(17, 19);
             this.lbl_el3.Style = MetroFramework.MetroColorStyle.Red;
@@ -844,7 +844,7 @@
             this.lbl_elfrm3.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_elfrm3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lbl_elfrm3.ForeColor = System.Drawing.Color.Black;
-            this.lbl_elfrm3.Location = new System.Drawing.Point(418, 0);
+            this.lbl_elfrm3.Location = new System.Drawing.Point(364, 0);
             this.lbl_elfrm3.Name = "lbl_elfrm3";
             this.lbl_elfrm3.Size = new System.Drawing.Size(17, 19);
             this.lbl_elfrm3.Style = MetroFramework.MetroColorStyle.Red;
@@ -863,7 +863,7 @@
             this.metroTabPage2.HorizontalScrollbarSize = 0;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 41);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(751, 183);
+            this.metroTabPage2.Size = new System.Drawing.Size(657, 155);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "MEKANİK";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -884,8 +884,8 @@
             // splitContainer9.Panel2
             // 
             this.splitContainer9.Panel2.Controls.Add(this.splitContainer10);
-            this.splitContainer9.Size = new System.Drawing.Size(751, 183);
-            this.splitContainer9.SplitterDistance = 91;
+            this.splitContainer9.Size = new System.Drawing.Size(657, 155);
+            this.splitContainer9.SplitterDistance = 77;
             this.splitContainer9.TabIndex = 3;
             // 
             // splitContainer19
@@ -901,8 +901,8 @@
             // splitContainer19.Panel2
             // 
             this.splitContainer19.Panel2.Controls.Add(this.lbl_mekfrm1);
-            this.splitContainer19.Size = new System.Drawing.Size(751, 91);
-            this.splitContainer19.SplitterDistance = 291;
+            this.splitContainer19.Size = new System.Drawing.Size(657, 77);
+            this.splitContainer19.SplitterDistance = 254;
             this.splitContainer19.TabIndex = 0;
             // 
             // lbl_mek1
@@ -911,7 +911,7 @@
             this.lbl_mek1.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_mek1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lbl_mek1.ForeColor = System.Drawing.Color.Black;
-            this.lbl_mek1.Location = new System.Drawing.Point(274, 0);
+            this.lbl_mek1.Location = new System.Drawing.Point(237, 0);
             this.lbl_mek1.Name = "lbl_mek1";
             this.lbl_mek1.Size = new System.Drawing.Size(17, 19);
             this.lbl_mek1.Style = MetroFramework.MetroColorStyle.Red;
@@ -928,7 +928,7 @@
             this.lbl_mekfrm1.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_mekfrm1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lbl_mekfrm1.ForeColor = System.Drawing.Color.Black;
-            this.lbl_mekfrm1.Location = new System.Drawing.Point(439, 0);
+            this.lbl_mekfrm1.Location = new System.Drawing.Point(382, 0);
             this.lbl_mekfrm1.Name = "lbl_mekfrm1";
             this.lbl_mekfrm1.Size = new System.Drawing.Size(17, 19);
             this.lbl_mekfrm1.Style = MetroFramework.MetroColorStyle.Red;
@@ -953,8 +953,8 @@
             // splitContainer10.Panel2
             // 
             this.splitContainer10.Panel2.Controls.Add(this.splitContainer21);
-            this.splitContainer10.Size = new System.Drawing.Size(751, 88);
-            this.splitContainer10.SplitterDistance = 41;
+            this.splitContainer10.Size = new System.Drawing.Size(657, 74);
+            this.splitContainer10.SplitterDistance = 34;
             this.splitContainer10.TabIndex = 0;
             // 
             // splitContainer20
@@ -970,8 +970,8 @@
             // splitContainer20.Panel2
             // 
             this.splitContainer20.Panel2.Controls.Add(this.lbl_mekfrm2);
-            this.splitContainer20.Size = new System.Drawing.Size(751, 41);
-            this.splitContainer20.SplitterDistance = 291;
+            this.splitContainer20.Size = new System.Drawing.Size(657, 34);
+            this.splitContainer20.SplitterDistance = 254;
             this.splitContainer20.TabIndex = 0;
             // 
             // lbl_mek2
@@ -980,7 +980,7 @@
             this.lbl_mek2.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_mek2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lbl_mek2.ForeColor = System.Drawing.Color.Black;
-            this.lbl_mek2.Location = new System.Drawing.Point(274, 0);
+            this.lbl_mek2.Location = new System.Drawing.Point(237, 0);
             this.lbl_mek2.Name = "lbl_mek2";
             this.lbl_mek2.Size = new System.Drawing.Size(17, 19);
             this.lbl_mek2.Style = MetroFramework.MetroColorStyle.Red;
@@ -997,7 +997,7 @@
             this.lbl_mekfrm2.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_mekfrm2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lbl_mekfrm2.ForeColor = System.Drawing.Color.Black;
-            this.lbl_mekfrm2.Location = new System.Drawing.Point(439, 0);
+            this.lbl_mekfrm2.Location = new System.Drawing.Point(382, 0);
             this.lbl_mekfrm2.Name = "lbl_mekfrm2";
             this.lbl_mekfrm2.Size = new System.Drawing.Size(17, 19);
             this.lbl_mekfrm2.Style = MetroFramework.MetroColorStyle.Red;
@@ -1021,8 +1021,8 @@
             // splitContainer21.Panel2
             // 
             this.splitContainer21.Panel2.Controls.Add(this.lbl_mekfrm3);
-            this.splitContainer21.Size = new System.Drawing.Size(751, 43);
-            this.splitContainer21.SplitterDistance = 291;
+            this.splitContainer21.Size = new System.Drawing.Size(657, 36);
+            this.splitContainer21.SplitterDistance = 254;
             this.splitContainer21.TabIndex = 0;
             // 
             // lbl_mek3
@@ -1031,7 +1031,7 @@
             this.lbl_mek3.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_mek3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lbl_mek3.ForeColor = System.Drawing.Color.Black;
-            this.lbl_mek3.Location = new System.Drawing.Point(274, 0);
+            this.lbl_mek3.Location = new System.Drawing.Point(237, 0);
             this.lbl_mek3.Name = "lbl_mek3";
             this.lbl_mek3.Size = new System.Drawing.Size(17, 19);
             this.lbl_mek3.Style = MetroFramework.MetroColorStyle.Red;
@@ -1048,7 +1048,7 @@
             this.lbl_mekfrm3.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_mekfrm3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lbl_mekfrm3.ForeColor = System.Drawing.Color.Black;
-            this.lbl_mekfrm3.Location = new System.Drawing.Point(439, 0);
+            this.lbl_mekfrm3.Location = new System.Drawing.Point(382, 0);
             this.lbl_mekfrm3.Name = "lbl_mekfrm3";
             this.lbl_mekfrm3.Size = new System.Drawing.Size(17, 19);
             this.lbl_mekfrm3.Style = MetroFramework.MetroColorStyle.Red;

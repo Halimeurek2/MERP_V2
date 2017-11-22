@@ -1,11 +1,15 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Linq;
 
 namespace MERP_V2
 {
     public partial class FaturaDuzenle : MetroFramework.Forms.MetroForm
     {
+        HelperFunctions hf;
+        DBConnect db;
         MySqlDataReader myReader;
+        FormMessageBox frmMessageBox;
 
         DateTime baslangic;
         DateTime bitis;
@@ -15,6 +19,8 @@ namespace MERP_V2
         public FaturaDuzenle()
         {
             InitializeComponent();
+            hf = new HelperFunctions();
+            db = new DBConnect();
         }
 
         private void FaturaDuzenle_Load(object sender, EventArgs e)
@@ -27,7 +33,7 @@ namespace MERP_V2
             myReader = mySqlCommand.ExecuteReader();
             while (myReader.Read())
             {
-                cmb_projeNo.Items.Add(myReader["proje_no"]);
+                cmb_proje_no.Items.Add(myReader["proje_no"]);
             }
             myReader.Close();
             //-----------------------------------------------------------------------------------------------------------------
@@ -97,6 +103,16 @@ namespace MERP_V2
             {
                 cmb_se.Visible = false;
                 cmb_se.Text = " ";
+            }
+        }
+
+        private void btn_duzenle_Click(object sender, EventArgs e)
+        {
+            if (txt_ftr_tutar.Text.Contains('.') & txt_ftr_tutar.Text.Contains(','))
+            {
+                frmMessageBox = new FormMessageBox();
+                frmMessageBox.txt_mesaj.Text = "Aynı anda hem virgül hem nokta giremezsiniz!";
+                frmMessageBox.Show();
             }
         }
     }

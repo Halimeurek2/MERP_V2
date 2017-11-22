@@ -25,7 +25,6 @@ namespace MERP_V2
 
         DateTime baslangic;
         DateTime bitis;
-
         string vade;
 
         public ProjeGiris()

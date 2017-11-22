@@ -56,18 +56,18 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.dgw_harcama = new MetroFramework.Controls.MetroGrid();
-            this.dgw_odeme = new MetroFramework.Controls.MetroGrid();
-            this.btn_hesapla = new MetroFramework.Controls.MetroButton();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tip = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tutar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birim = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgw_odeme = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewComboBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.btn_hesapla = new MetroFramework.Controls.MetroButton();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_harcama)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_odeme)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -458,6 +458,7 @@
             this.tip,
             this.tutar,
             this.birim});
+            this.dgw_harcama.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -489,90 +490,6 @@
             this.dgw_harcama.UseCustomBackColor = true;
             this.dgw_harcama.UseCustomForeColor = true;
             this.dgw_harcama.UseStyleColors = true;
-            // 
-            // dgw_odeme
-            // 
-            this.dgw_odeme.AllowUserToResizeRows = false;
-            this.dgw_odeme.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgw_odeme.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgw_odeme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgw_odeme.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgw_odeme.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgw_odeme.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgw_odeme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgw_odeme.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewComboBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewComboBoxColumn2});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgw_odeme.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgw_odeme.EnableHeadersVisualStyles = false;
-            this.dgw_odeme.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgw_odeme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgw_odeme.Location = new System.Drawing.Point(361, 335);
-            this.dgw_odeme.Name = "dgw_odeme";
-            this.dgw_odeme.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgw_odeme.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgw_odeme.RowHeadersVisible = false;
-            this.dgw_odeme.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgw_odeme.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgw_odeme.Size = new System.Drawing.Size(481, 168);
-            this.dgw_odeme.Style = MetroFramework.MetroColorStyle.Brown;
-            this.dgw_odeme.TabIndex = 165;
-            this.dgw_odeme.UseCustomBackColor = true;
-            this.dgw_odeme.UseCustomForeColor = true;
-            this.dgw_odeme.UseStyleColors = true;
-            // 
-            // btn_hesapla
-            // 
-            this.btn_hesapla.Highlight = true;
-            this.btn_hesapla.Location = new System.Drawing.Point(722, 522);
-            this.btn_hesapla.Name = "btn_hesapla";
-            this.btn_hesapla.Size = new System.Drawing.Size(120, 26);
-            this.btn_hesapla.Style = MetroFramework.MetroColorStyle.Red;
-            this.btn_hesapla.TabIndex = 166;
-            this.btn_hesapla.Text = "HESAPLA";
-            this.btn_hesapla.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btn_hesapla.UseCustomBackColor = true;
-            this.btn_hesapla.UseCustomForeColor = true;
-            this.btn_hesapla.UseSelectable = true;
-            this.btn_hesapla.UseStyleColors = true;
-            this.btn_hesapla.Click += new System.EventHandler(this.btn_hesapla_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.silToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(87, 26);
-            // 
-            // silToolStripMenuItem
-            // 
-            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
-            this.silToolStripMenuItem.Text = "Sil";
-            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // tarih
             // 
@@ -612,6 +529,61 @@
             "CHF"});
             this.birim.Name = "birim";
             // 
+            // dgw_odeme
+            // 
+            this.dgw_odeme.AllowUserToResizeRows = false;
+            this.dgw_odeme.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgw_odeme.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgw_odeme.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgw_odeme.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgw_odeme.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgw_odeme.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgw_odeme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgw_odeme.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewComboBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewComboBoxColumn2});
+            this.dgw_odeme.ContextMenuStrip = this.contextMenuStrip1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgw_odeme.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgw_odeme.EnableHeadersVisualStyles = false;
+            this.dgw_odeme.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgw_odeme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgw_odeme.Location = new System.Drawing.Point(361, 335);
+            this.dgw_odeme.Name = "dgw_odeme";
+            this.dgw_odeme.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgw_odeme.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgw_odeme.RowHeadersVisible = false;
+            this.dgw_odeme.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgw_odeme.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgw_odeme.Size = new System.Drawing.Size(481, 168);
+            this.dgw_odeme.Style = MetroFramework.MetroColorStyle.Brown;
+            this.dgw_odeme.TabIndex = 165;
+            this.dgw_odeme.UseCustomBackColor = true;
+            this.dgw_odeme.UseCustomForeColor = true;
+            this.dgw_odeme.UseStyleColors = true;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "TARİH";
@@ -646,6 +618,36 @@
             "TRY",
             "CHF"});
             this.dataGridViewComboBoxColumn2.Name = "dataGridViewComboBoxColumn2";
+            // 
+            // btn_hesapla
+            // 
+            this.btn_hesapla.Highlight = true;
+            this.btn_hesapla.Location = new System.Drawing.Point(722, 522);
+            this.btn_hesapla.Name = "btn_hesapla";
+            this.btn_hesapla.Size = new System.Drawing.Size(120, 26);
+            this.btn_hesapla.Style = MetroFramework.MetroColorStyle.Red;
+            this.btn_hesapla.TabIndex = 166;
+            this.btn_hesapla.Text = "HESAPLA";
+            this.btn_hesapla.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btn_hesapla.UseCustomBackColor = true;
+            this.btn_hesapla.UseCustomForeColor = true;
+            this.btn_hesapla.UseSelectable = true;
+            this.btn_hesapla.UseStyleColors = true;
+            this.btn_hesapla.Click += new System.EventHandler(this.btn_hesapla_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(87, 26);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // HarcamaOngorusu
             // 

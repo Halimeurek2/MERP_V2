@@ -83,7 +83,7 @@ namespace MERP_V2
                 FaturaDuzenle ftrDuzenle = new FaturaDuzenle();
                 ftrDuzenle.lbl_id.Text = id;
                 ftrDuzenle.txt_fatura_no.Text = fatura_no;
-                ftrDuzenle.cmb_projeNo.Text = proje_no;
+                ftrDuzenle.cmb_proje_no.Text = proje_no;
                 ftrDuzenle.cmb_firma.Text = firma;
                 ftrDuzenle.txt_ftr_vade.Text = vade;
                 ftrDuzenle.rcb_aciklama.Text = aciklama;

@@ -48,10 +48,12 @@
             this.txt_siparis_no = new MetroFramework.Controls.MetroTextBox();
             this.date_temin = new MetroFramework.Controls.MetroDateTime();
             this.cmb_birim = new MetroFramework.Controls.MetroComboBox();
-            this.cmb_proje_no = new MetroFramework.Controls.MetroComboBox();
             this.rbVerilen = new MetroFramework.Controls.MetroRadioButton();
             this.rbGelen = new MetroFramework.Controls.MetroRadioButton();
             this.lbl_id = new MetroFramework.Controls.MetroLabel();
+            this.mySqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+            this.mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
+            this.cmb_proje_no = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_duzenle
@@ -68,6 +70,7 @@
             this.btn_duzenle.UseCustomForeColor = true;
             this.btn_duzenle.UseSelectable = true;
             this.btn_duzenle.UseStyleColors = true;
+            this.btn_duzenle.Click += new System.EventHandler(this.btn_duzenle_Click);
             // 
             // metroLabel10
             // 
@@ -419,22 +422,6 @@
             this.cmb_birim.UseSelectable = true;
             this.cmb_birim.UseStyleColors = true;
             // 
-            // cmb_proje_no
-            // 
-            this.cmb_proje_no.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmb_proje_no.FormattingEnabled = true;
-            this.cmb_proje_no.ItemHeight = 23;
-            this.cmb_proje_no.Location = new System.Drawing.Point(171, 112);
-            this.cmb_proje_no.Name = "cmb_proje_no";
-            this.cmb_proje_no.Size = new System.Drawing.Size(187, 29);
-            this.cmb_proje_no.Style = MetroFramework.MetroColorStyle.Red;
-            this.cmb_proje_no.TabIndex = 160;
-            this.cmb_proje_no.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.cmb_proje_no.UseCustomBackColor = true;
-            this.cmb_proje_no.UseCustomForeColor = true;
-            this.cmb_proje_no.UseSelectable = true;
-            this.cmb_proje_no.UseStyleColors = true;
-            // 
             // rbVerilen
             // 
             this.rbVerilen.AutoSize = true;
@@ -481,11 +468,34 @@
             this.lbl_id.UseStyleColors = true;
             this.lbl_id.Visible = false;
             // 
+            // mySqlCommand
+            // 
+            this.mySqlCommand.CacheAge = 60;
+            this.mySqlCommand.Connection = this.mySqlConnection;
+            this.mySqlCommand.EnableCaching = false;
+            this.mySqlCommand.Transaction = null;
+            // 
+            // mySqlConnection
+            // 
+            this.mySqlConnection.ConnectionString = "server=localhost;database=merp_dbv1;user id=root;password=root";
+            // 
+            // cmb_proje_no
+            // 
+            this.cmb_proje_no.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_proje_no.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_proje_no.BackColor = System.Drawing.Color.White;
+            this.cmb_proje_no.FormattingEnabled = true;
+            this.cmb_proje_no.Location = new System.Drawing.Point(171, 117);
+            this.cmb_proje_no.Name = "cmb_proje_no";
+            this.cmb_proje_no.Size = new System.Drawing.Size(187, 21);
+            this.cmb_proje_no.TabIndex = 186;
+            // 
             // SiparisEmriDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 639);
+            this.Controls.Add(this.cmb_proje_no);
             this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.btn_duzenle);
             this.Controls.Add(this.metroLabel10);
@@ -507,7 +517,6 @@
             this.Controls.Add(this.txt_siparis_no);
             this.Controls.Add(this.date_temin);
             this.Controls.Add(this.cmb_birim);
-            this.Controls.Add(this.cmb_proje_no);
             this.Controls.Add(this.rbVerilen);
             this.Controls.Add(this.rbGelen);
             this.MaximizeBox = false;
@@ -523,30 +532,31 @@
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroButton btn_duzenle;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
-        private System.Windows.Forms.RichTextBox rcb_aciklama;
         public MetroFramework.Controls.MetroDateTime date_teslim;
         public System.Windows.Forms.ComboBox cmb_tedarikci;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroTextBox txt_fiyat;
-        private MetroFramework.Controls.MetroTextBox txt_vade;
-        private MetroFramework.Controls.MetroTextBox txt_talepKisi;
-        private MetroFramework.Controls.MetroTextBox txt_siparis_no;
-        private MetroFramework.Controls.MetroDateTime date_temin;
-        private MetroFramework.Controls.MetroComboBox cmb_birim;
-        private MetroFramework.Controls.MetroComboBox cmb_proje_no;
-        private MetroFramework.Controls.MetroRadioButton rbVerilen;
-        private MetroFramework.Controls.MetroRadioButton rbGelen;
         public MetroFramework.Controls.MetroLabel lbl_id;
+        public MetroFramework.Controls.MetroButton btn_duzenle;
+        public MetroFramework.Controls.MetroLabel metroLabel10;
+        public System.Windows.Forms.RichTextBox rcb_aciklama;
+        public MetroFramework.Controls.MetroLabel metroLabel9;
+        public MetroFramework.Controls.MetroLabel metroLabel8;
+        public MetroFramework.Controls.MetroLabel metroLabel7;
+        public MetroFramework.Controls.MetroLabel metroLabel6;
+        public MetroFramework.Controls.MetroLabel metroLabel5;
+        public MetroFramework.Controls.MetroLabel metroLabel4;
+        public MetroFramework.Controls.MetroLabel metroLabel2;
+        public MetroFramework.Controls.MetroLabel metroLabel1;
+        public MetroFramework.Controls.MetroLabel metroLabel3;
+        public MetroFramework.Controls.MetroTextBox txt_fiyat;
+        public MetroFramework.Controls.MetroTextBox txt_vade;
+        public MetroFramework.Controls.MetroTextBox txt_talepKisi;
+        public MetroFramework.Controls.MetroTextBox txt_siparis_no;
+        public MetroFramework.Controls.MetroDateTime date_temin;
+        public MetroFramework.Controls.MetroComboBox cmb_birim;
+        public MetroFramework.Controls.MetroRadioButton rbVerilen;
+        public MetroFramework.Controls.MetroRadioButton rbGelen;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
+        public System.Windows.Forms.ComboBox cmb_proje_no;
     }
 }

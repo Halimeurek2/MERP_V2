@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiparisEmirleri));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.txt_satinalma_no = new System.Windows.Forms.ToolStripTextBox();
@@ -41,27 +41,21 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.txt_tedarikci = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btn_temizle = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btn_sil = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btn_duzenle = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.lbl_toplam = new System.Windows.Forms.ToolStripLabel();
-            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgw_siparisemirleri = new MetroFramework.Controls.MetroGrid();
+            this.mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
+            this.mySqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+            this.mySqlDataAdapter = new MySql.Data.MySqlClient.MySqlDataAdapter();
+            this.mySqlCommandListele = new MySql.Data.MySqlClient.MySqlCommand();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_siparisemirleri)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -77,7 +71,7 @@
             this.toolStripSeparator5,
             this.toolStripLabel4,
             this.txt_tedarikci,
-            this.toolStripButton1});
+            this.btn_temizle});
             this.toolStrip1.Location = new System.Drawing.Point(20, 60);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1346, 25);
@@ -94,6 +88,7 @@
             // 
             this.txt_satinalma_no.Name = "txt_satinalma_no";
             this.txt_satinalma_no.Size = new System.Drawing.Size(100, 25);
+            this.txt_satinalma_no.TextChanged += new System.EventHandler(this.txt_satinalma_no_TextChanged);
             // 
             // label
             // 
@@ -111,6 +106,7 @@
             // 
             this.cmb_proje_no.Name = "cmb_proje_no";
             this.cmb_proje_no.Size = new System.Drawing.Size(121, 25);
+            this.cmb_proje_no.SelectedIndexChanged += new System.EventHandler(this.cmb_proje_no_SelectedIndexChanged);
             // 
             // toolStripSeparator5
             // 
@@ -128,16 +124,18 @@
             // 
             this.txt_tedarikci.Name = "txt_tedarikci";
             this.txt_tedarikci.Size = new System.Drawing.Size(100, 25);
+            this.txt_tedarikci.TextChanged += new System.EventHandler(this.txt_tedarikci_TextChanged);
             // 
-            // toolStripButton1
+            // btn_temizle
             // 
-            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton1.ForeColor = System.Drawing.Color.Red;
-            this.toolStripButton1.Image = global::MERP_V2.Properties.Resources.appbar_refresh;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(68, 22);
-            this.toolStripButton1.Text = "Temizle";
+            this.btn_temizle.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btn_temizle.ForeColor = System.Drawing.Color.Red;
+            this.btn_temizle.Image = global::MERP_V2.Properties.Resources.appbar_refresh;
+            this.btn_temizle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_temizle.Name = "btn_temizle";
+            this.btn_temizle.Size = new System.Drawing.Size(68, 22);
+            this.btn_temizle.Text = "Temizle";
+            this.btn_temizle.Click += new System.EventHandler(this.btn_temizle_Click);
             // 
             // toolStrip2
             // 
@@ -186,6 +184,7 @@
             this.btn_duzenle.Name = "btn_duzenle";
             this.btn_duzenle.Size = new System.Drawing.Size(74, 23);
             this.btn_duzenle.Text = "DÜZENLE";
+            this.btn_duzenle.Click += new System.EventHandler(this.btn_duzenle_Click);
             // 
             // toolStripLabel6
             // 
@@ -201,117 +200,84 @@
             this.lbl_toplam.Size = new System.Drawing.Size(13, 23);
             this.lbl_toplam.Text = "0";
             // 
-            // metroGrid1
+            // dgw_siparisemirleri
             // 
-            this.metroGrid1.AllowUserToResizeRows = false;
-            this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.metroGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroGrid1.EnableHeadersVisualStyles = false;
-            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(20, 85);
-            this.metroGrid1.Name = "metroGrid1";
-            this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(1346, 657);
-            this.metroGrid1.TabIndex = 4;
+            this.dgw_siparisemirleri.AllowUserToResizeRows = false;
+            this.dgw_siparisemirleri.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgw_siparisemirleri.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgw_siparisemirleri.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgw_siparisemirleri.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgw_siparisemirleri.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgw_siparisemirleri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgw_siparisemirleri.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgw_siparisemirleri.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgw_siparisemirleri.EnableHeadersVisualStyles = false;
+            this.dgw_siparisemirleri.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgw_siparisemirleri.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgw_siparisemirleri.Location = new System.Drawing.Point(20, 85);
+            this.dgw_siparisemirleri.Name = "dgw_siparisemirleri";
+            this.dgw_siparisemirleri.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgw_siparisemirleri.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgw_siparisemirleri.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgw_siparisemirleri.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgw_siparisemirleri.Size = new System.Drawing.Size(1346, 657);
+            this.dgw_siparisemirleri.TabIndex = 4;
+            this.dgw_siparisemirleri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_siparisemirleri_CellClick);
+            this.dgw_siparisemirleri.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgw_siparisemirleri_RowHeaderMouseClick);
             // 
-            // Column1
+            // mySqlConnection
             // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
+            this.mySqlConnection.ConnectionString = "server=localhost;database=merp_dbv1;user id=root;password=root";
             // 
-            // Column2
+            // mySqlCommand
             // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
+            this.mySqlCommand.CacheAge = 60;
+            this.mySqlCommand.Connection = this.mySqlConnection;
+            this.mySqlCommand.EnableCaching = false;
+            this.mySqlCommand.Transaction = null;
             // 
-            // Column3
+            // mySqlDataAdapter
             // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
+            this.mySqlDataAdapter.DeleteCommand = null;
+            this.mySqlDataAdapter.InsertCommand = null;
+            this.mySqlDataAdapter.SelectCommand = this.mySqlCommandListele;
+            this.mySqlDataAdapter.UpdateCommand = null;
             // 
-            // Column4
+            // mySqlCommandListele
             // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Column9";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Column10";
-            this.Column10.Name = "Column10";
+            this.mySqlCommandListele.CacheAge = 60;
+            this.mySqlCommandListele.CommandText = "SELECT * FROM db_siparis_emri";
+            this.mySqlCommandListele.Connection = this.mySqlConnection;
+            this.mySqlCommandListele.EnableCaching = false;
+            this.mySqlCommandListele.Transaction = null;
             // 
             // SiparisEmirleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1386, 788);
-            this.Controls.Add(this.metroGrid1);
+            this.Controls.Add(this.dgw_siparisemirleri);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Name = "SiparisEmirleri";
@@ -322,7 +288,7 @@
             this.toolStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_siparisemirleri)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,23 +305,17 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripTextBox txt_tedarikci;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btn_temizle;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton btn_sil;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton btn_duzenle;
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
         private System.Windows.Forms.ToolStripLabel lbl_toplam;
-        private MetroFramework.Controls.MetroGrid metroGrid1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private MetroFramework.Controls.MetroGrid dgw_siparisemirleri;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand;
+        private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommandListele;
     }
 }

@@ -60,7 +60,7 @@
             this.mySqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
             this.mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
             this.cmb_gelense = new MetroFramework.Controls.MetroComboBox();
-            this.cmb_projeNo = new System.Windows.Forms.ComboBox();
+            this.cmb_proje_no = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cmb_durum
@@ -526,6 +526,7 @@
             this.btn_duzenle.UseCustomForeColor = true;
             this.btn_duzenle.UseSelectable = true;
             this.btn_duzenle.UseStyleColors = true;
+            this.btn_duzenle.Click += new System.EventHandler(this.btn_duzenle_Click);
             // 
             // lbl_tip
             // 
@@ -614,23 +615,23 @@
             this.cmb_gelense.UseStyleColors = true;
             this.cmb_gelense.Visible = false;
             // 
-            // cmb_projeNo
+            // cmb_proje_no
             // 
-            this.cmb_projeNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmb_projeNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_projeNo.BackColor = System.Drawing.Color.White;
-            this.cmb_projeNo.FormattingEnabled = true;
-            this.cmb_projeNo.Location = new System.Drawing.Point(132, 157);
-            this.cmb_projeNo.Name = "cmb_projeNo";
-            this.cmb_projeNo.Size = new System.Drawing.Size(184, 21);
-            this.cmb_projeNo.TabIndex = 131;
+            this.cmb_proje_no.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_proje_no.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_proje_no.BackColor = System.Drawing.Color.White;
+            this.cmb_proje_no.FormattingEnabled = true;
+            this.cmb_proje_no.Location = new System.Drawing.Point(132, 157);
+            this.cmb_proje_no.Name = "cmb_proje_no";
+            this.cmb_proje_no.Size = new System.Drawing.Size(184, 21);
+            this.cmb_proje_no.TabIndex = 131;
             // 
             // FaturaDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 693);
-            this.Controls.Add(this.cmb_projeNo);
+            this.Controls.Add(this.cmb_proje_no);
             this.Controls.Add(this.cmb_gelense);
             this.Controls.Add(this.date_ftr_tarih);
             this.Controls.Add(this.date_odendi);
@@ -706,6 +707,6 @@
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand;
         private MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
         public MetroFramework.Controls.MetroComboBox cmb_gelense;
-        public System.Windows.Forms.ComboBox cmb_projeNo;
+        public System.Windows.Forms.ComboBox cmb_proje_no;
     }
 }

@@ -54,12 +54,9 @@
             this.hakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btn_grafik = new System.Windows.Forms.Button();
             this.pnl_grafik = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -91,13 +88,10 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.pnl_grafik.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -125,7 +119,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(23, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1534, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1231, 40);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -260,8 +254,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pnl_grafik);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip1);
-            this.splitContainer1.Size = new System.Drawing.Size(1534, 704);
-            this.splitContainer1.SplitterDistance = 42;
+            this.splitContainer1.Size = new System.Drawing.Size(1231, 631);
+            this.splitContainer1.SplitterDistance = 67;
             this.splitContainer1.TabIndex = 2;
             // 
             // splitContainer2
@@ -273,37 +267,28 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainer2.Panel1.Controls.Add(this.button1);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(42, 704);
-            this.splitContainer2.SplitterDistance = 234;
+            this.splitContainer2.Size = new System.Drawing.Size(67, 631);
+            this.splitContainer2.SplitterDistance = 209;
             this.splitContainer2.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MERP_V2.Properties.Resources.malvefatu;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 66);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(39, 166);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Red;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 234);
+            this.button1.Size = new System.Drawing.Size(67, 209);
             this.button1.TabIndex = 0;
-            this.button1.Text = "\r\n";
+            this.button1.Text = "Maliyet \r\nve\r\nFaturalar\r\n";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // splitContainer3
@@ -315,60 +300,43 @@
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.pictureBox2);
             this.splitContainer3.Panel1.Controls.Add(this.button2);
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.pictureBox3);
             this.splitContainer3.Panel2.Controls.Add(this.btn_grafik);
-            this.splitContainer3.Size = new System.Drawing.Size(42, 466);
-            this.splitContainer3.SplitterDistance = 233;
+            this.splitContainer3.Size = new System.Drawing.Size(67, 418);
+            this.splitContainer3.SplitterDistance = 209;
             this.splitContainer3.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MERP_V2.Properties.Resources.cokaciil;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 65);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(37, 166);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
             // 
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Red;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 233);
+            this.button2.Size = new System.Drawing.Size(67, 209);
             this.button2.TabIndex = 1;
+            this.button2.Text = "Çok Acil\r\nİşler";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::MERP_V2.Properties.Resources.grafik;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 61);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(37, 166);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.btn_grafik_Click);
             // 
             // btn_grafik
             // 
             this.btn_grafik.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_grafik.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_grafik.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_grafik.ForeColor = System.Drawing.Color.Red;
             this.btn_grafik.Image = ((System.Drawing.Image)(resources.GetObject("btn_grafik.Image")));
             this.btn_grafik.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_grafik.Location = new System.Drawing.Point(0, 0);
             this.btn_grafik.Name = "btn_grafik";
-            this.btn_grafik.Size = new System.Drawing.Size(42, 229);
+            this.btn_grafik.Size = new System.Drawing.Size(67, 205);
             this.btn_grafik.TabIndex = 1;
+            this.btn_grafik.Text = "Grafik";
             this.btn_grafik.UseVisualStyleBackColor = true;
             this.btn_grafik.Click += new System.EventHandler(this.btn_grafik_Click);
             // 
@@ -500,9 +468,9 @@
             this.toolStripSeparator1,
             this.toolStripLabel6,
             this.lbl_gbp});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 679);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 606);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1488, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1160, 25);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -587,7 +555,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1580, 824);
+            this.ClientSize = new System.Drawing.Size(1277, 751);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -609,13 +577,10 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.pnl_grafik.ResumeLayout(false);
             this.pnl_grafik.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -653,9 +618,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_grafik;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel pnl_grafik;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;

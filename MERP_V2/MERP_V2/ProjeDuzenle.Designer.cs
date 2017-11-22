@@ -53,6 +53,8 @@
             this.rbProje = new MetroFramework.Controls.MetroRadioButton();
             this.rbSeri = new MetroFramework.Controls.MetroRadioButton();
             this.lbl_id = new MetroFramework.Controls.MetroLabel();
+            this.mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
+            this.mySqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
             this.SuspendLayout();
             // 
             // btn_duzenle
@@ -69,6 +71,7 @@
             this.btn_duzenle.UseCustomForeColor = true;
             this.btn_duzenle.UseSelectable = true;
             this.btn_duzenle.UseStyleColors = true;
+            this.btn_duzenle.Click += new System.EventHandler(this.btn_duzenle_Click);
             // 
             // btn_harcamalar
             // 
@@ -207,6 +210,7 @@
             this.txt_vade.WaterMark = "Gün olarak giriniz";
             this.txt_vade.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_vade.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_vade.TextChanged += new System.EventHandler(this.txt_vade_TextChanged);
             // 
             // metroLabel4
             // 
@@ -525,6 +529,17 @@
             this.lbl_id.UseStyleColors = true;
             this.lbl_id.Visible = false;
             // 
+            // mySqlConnection
+            // 
+            this.mySqlConnection.ConnectionString = "server=localhost;database=merp_dbv1;user id=root;password=root";
+            // 
+            // mySqlCommand
+            // 
+            this.mySqlCommand.CacheAge = 60;
+            this.mySqlCommand.Connection = this.mySqlConnection;
+            this.mySqlCommand.EnableCaching = false;
+            this.mySqlCommand.Transaction = null;
+            // 
             // ProjeDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,31 +583,32 @@
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroButton btn_duzenle;
-        private MetroFramework.Controls.MetroButton btn_harcamalar;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
-        private System.Windows.Forms.RichTextBox rcb_aciklama;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroDateTime dtp_bitis;
-        private MetroFramework.Controls.MetroDateTime dtp_baslangic;
-        private MetroFramework.Controls.MetroTextBox txt_vade;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroTextBox txt_butce;
-        private MetroFramework.Controls.MetroComboBox cmb_birim;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroTextBox txt_musteri;
-        private MetroFramework.Controls.MetroTextBox txt_proje_adi;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroTextBox txt_proje_no;
-        private MetroFramework.Controls.MetroLabel lbl_birim;
-        private MetroFramework.Controls.MetroLabel lbl_harcamalar;
-        private MetroFramework.Controls.MetroRadioButton rbProje;
-        private MetroFramework.Controls.MetroRadioButton rbSeri;
         public MetroFramework.Controls.MetroLabel lbl_id;
+        public MetroFramework.Controls.MetroButton btn_duzenle;
+        public MetroFramework.Controls.MetroButton btn_harcamalar;
+        public MetroFramework.Controls.MetroLabel metroLabel9;
+        public System.Windows.Forms.RichTextBox rcb_aciklama;
+        public MetroFramework.Controls.MetroLabel metroLabel8;
+        public MetroFramework.Controls.MetroLabel metroLabel7;
+        public MetroFramework.Controls.MetroLabel metroLabel6;
+        public MetroFramework.Controls.MetroDateTime dtp_bitis;
+        public MetroFramework.Controls.MetroDateTime dtp_baslangic;
+        public MetroFramework.Controls.MetroTextBox txt_vade;
+        public MetroFramework.Controls.MetroLabel metroLabel4;
+        public MetroFramework.Controls.MetroLabel metroLabel3;
+        public MetroFramework.Controls.MetroTextBox txt_butce;
+        public MetroFramework.Controls.MetroComboBox cmb_birim;
+        public MetroFramework.Controls.MetroLabel metroLabel5;
+        public MetroFramework.Controls.MetroTextBox txt_musteri;
+        public MetroFramework.Controls.MetroTextBox txt_proje_adi;
+        public MetroFramework.Controls.MetroLabel metroLabel2;
+        public MetroFramework.Controls.MetroLabel metroLabel1;
+        public MetroFramework.Controls.MetroTextBox txt_proje_no;
+        public MetroFramework.Controls.MetroLabel lbl_birim;
+        public MetroFramework.Controls.MetroLabel lbl_harcamalar;
+        public MetroFramework.Controls.MetroRadioButton rbProje;
+        public MetroFramework.Controls.MetroRadioButton rbSeri;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand;
     }
 }

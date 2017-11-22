@@ -27,6 +27,7 @@ namespace MERP_V2
 
             connection = new MySqlConnection(connectionString);
         }
+
         public bool OpenConnection()
         {
             try
@@ -68,6 +69,8 @@ namespace MERP_V2
             }
         }
 
+        #region FATURA GİRİŞ
+
         public void InsertFaturaGiris(string fatura_no,
                                       string proje_no,
                                       string firma,
@@ -85,7 +88,9 @@ namespace MERP_V2
                                       string tip,
                                       string cins,
                                       string durum,
-                                      string siparisemri)
+                                      string siparisemri,
+                                      DateTime odeme_tarih,
+                                      DateTime giris_tarih)
         {
 
             MySqlCommand cmd = new MySqlCommand("INSERT INTO db_faturalar (fatura_no," +
@@ -99,7 +104,7 @@ namespace MERP_V2
            "fatura_tutari," +
            "fatura_birim," +
            "fatura_avans," +
-           "fatura_euro,fatura_dolar,fatura_tl,fatura_tipi,fatura_cinsi,fatura_durum,fatura_siparisemri) VALUES (@fatura_no," +
+           "fatura_euro,fatura_dolar,fatura_tl,fatura_tipi,fatura_cinsi,fatura_durum,fatura_siparisemri,fatura_odeme_tarih,fatura_giris_tarih) VALUES (@fatura_no," +
            "@proje_no," +
            "@firma," +
            "@vade," +
@@ -110,7 +115,7 @@ namespace MERP_V2
            "@tutar," +
            "@birim," +
            "@avans," +
-           "@fatura_euro,@fatura_dolar,@fatura_tl,@tip,@cins,@durum,@siparisemri)", connection);
+           "@fatura_euro,@fatura_dolar,@fatura_tl,@tip,@cins,@durum,@siparisemri,@odeme_tarih,@giris_tarih)", connection);
 
             cmd.Parameters.AddWithValue("@fatura_no", fatura_no);
             cmd.Parameters.AddWithValue("@proje_no", proje_no);
@@ -130,6 +135,8 @@ namespace MERP_V2
             cmd.Parameters.AddWithValue("@cins", cins);
             cmd.Parameters.AddWithValue("@durum", durum);
             cmd.Parameters.AddWithValue("@siparisemri", siparisemri);
+            cmd.Parameters.AddWithValue("@odeme_tarih", odeme_tarih);
+            cmd.Parameters.AddWithValue("@giris_tarih", giris_tarih);
 
 
             //open connection
@@ -143,6 +150,9 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region PROJE GİRİŞ
 
         public void InsertProjeGiris(string proje_no,
                                      string proje_ismi,
@@ -208,6 +218,9 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region SİPARİŞ EMRİ GİRİŞ
 
         public void InsertSE(string proje_no,
                              string satinalma_no,
@@ -278,6 +291,9 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region AKTİVİTE GİRİŞ
 
         public void InsertAktiviteGiris(string proje_no,
                                         string oncelik,
@@ -322,6 +338,9 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region HARCAMA GİRİŞ
 
         public void InsertHarcamalar(int proje_id,
                                 string harcama_tipi,
@@ -358,6 +377,9 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region ODEME GİRİŞ
 
         public void InsertOdemeler(int proje_id,
                               string ongoru_tipi,
@@ -394,6 +416,9 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region KULLANICI KAYIT
 
         public void InsertKullaniciGiris(string kullaniciAdi,
                                          string password,
@@ -426,6 +451,9 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region KULLANICI GİRİŞ
 
         public void InsertKullanicilar(int kullanici_id,
                                        DateTime giris_tarihi,
@@ -458,6 +486,9 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region AKTİVİTE DUZENLE
 
         public void UpdateAktivite(int id,
                                    string proje_no,
@@ -496,6 +527,9 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region FATURA DUZENLE
 
         public void UpdateFaturalar(int id,
                                     string fatura_no,
@@ -514,7 +548,10 @@ namespace MERP_V2
                                     decimal fatura_tl,
                                     string tip,
                                     string cins,
-                                    string durum, string fatura_siparisemri)
+                                    string durum,
+                                    string fatura_siparisemri,
+                                    DateTime odeme_tarih,
+                                    DateTime giris_tarih)
         {
             MySqlCommand cmd = new MySqlCommand("update db_faturalar set fatura_no=@fatura_no," +
            "fatura_proje_no=@proje_no," +
@@ -532,7 +569,7 @@ namespace MERP_V2
            "fatura_tl=@fatura_tl," +
            "fatura_tipi=@tip," +
            "fatura_cinsi=@cins," +
-           "fatura_durum=@durum, fatura_siparisemri=@fatura_siparisemri where fatura_id=@id", connection);
+           "fatura_durum=@durum, fatura_siparisemri=@fatura_siparisemri, fatura_odeme_tarih=@odeme_tarih, fatura_giris_tarih=@giris_tarih where fatura_id=@id", connection);
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@fatura_no", fatura_no);
@@ -553,6 +590,8 @@ namespace MERP_V2
             cmd.Parameters.AddWithValue("@cins", cins);
             cmd.Parameters.AddWithValue("@durum", durum);
             cmd.Parameters.AddWithValue("@fatura_siparisemri", fatura_siparisemri);
+            cmd.Parameters.AddWithValue("@odeme_tarih", odeme_tarih);
+            cmd.Parameters.AddWithValue("@giris_tarih", giris_tarih);
 
 
             if (this.OpenConnection() == true)
@@ -565,6 +604,9 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region PROJE DUZENLE
 
         public void UpdateProjeler(int id,
                                     string proje_no,
@@ -627,6 +669,10 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region SİPARİŞ EMRİ DUZENLE
+
         public void UpdateSE(int id,
                         string proje_no,
                         string satinalma_no,
@@ -686,6 +732,9 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region HARCAMA DUZENLE
 
         public void UpdateHarcamalar(int id, int proje_id,
                                      string harcama_tipi,
@@ -719,6 +768,9 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region ODEME DUZENLE
 
         public void UpdateOdemeler(int id, int proje_id,
                              string ongoru_tipi,
@@ -752,5 +804,6 @@ namespace MERP_V2
                 this.CloseConnection();
             }
         }
+        #endregion
     }
 }

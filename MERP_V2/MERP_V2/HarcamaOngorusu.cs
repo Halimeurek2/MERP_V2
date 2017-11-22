@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace MERP_V2
 {
     public partial class HarcamaOngorusu : MetroFramework.Forms.MetroForm
     {
         HelperFunctions hf;
+        ProjeDuzenle prjDuzenle;
+        ProjeGiris prjGiris;
 
         int indexH = 0;
         int indexO = 0;
@@ -19,12 +22,24 @@ namespace MERP_V2
 
         private void HarcamaOngorusu_Load(object sender, EventArgs e)
         {
+            prjGiris = (ProjeGiris)Application.OpenForms["ProjeGiris"];
+            prjDuzenle = (ProjeDuzenle)Application.OpenForms["ProjeDuzenle"];
 
+            if(prjGiris != null)
+            {
+                indexH = 0;
+                indexO = 0;
+            }
+            else
+            {
+                indexH = dgw_harcama.Rows.Count - 1;
+                indexO = dgw_odeme.Rows.Count - 1;
+            }
         }
 
         private void btn_ekleH_Click(object sender, EventArgs e)
         {
-            dgw_harcama.Rows.Add();//datagridviewe yeni satır ekler
+            dgw_harcama.Rows.Add();
             dgw_harcama.Rows[indexH].Cells[0].Value = date_tarihH.Text;
             dgw_harcama.Rows[indexH].Cells[1].Value = cmb_tipH.Text;
             dgw_harcama.Rows[indexH].Cells[2].Value = txt_tutarH.Text;
@@ -34,7 +49,7 @@ namespace MERP_V2
 
         private void btn_ekleO_Click(object sender, EventArgs e)
         {
-            dgw_odeme.Rows.Add();//datagridviewe yeni satır ekler
+            dgw_odeme.Rows.Add();
             dgw_odeme.Rows[indexO].Cells[0].Value = date_tarihO.Text;
             dgw_odeme.Rows[indexO].Cells[1].Value = cmb_tipO.Text;
             dgw_odeme.Rows[indexO].Cells[2].Value = txt_tutarO.Text;

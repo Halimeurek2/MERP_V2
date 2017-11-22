@@ -153,6 +153,7 @@
     <Compile Include="SiparisEmriGiris.Designer.cs">
       <DependentUpon>SiparisEmriGiris.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sorgular.cs" />
     <EmbeddedResource Include="AnaEkran.resx">
       <DependentUpon>AnaEkran.cs</DependentUpon>
     </EmbeddedResource>
