@@ -41,6 +41,12 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.cmb_proje_no = new System.Windows.Forms.ToolStripComboBox();
@@ -104,12 +110,26 @@
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel20 = new System.Windows.Forms.ToolStripLabel();
             this.lbl_odenmemisG = new System.Windows.Forms.ToolStripLabel();
+            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.dgw_odenmemisG = new MetroFramework.Controls.MetroGrid();
+            this.toolStrip4 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.lbl_toplamG = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel22 = new System.Windows.Forms.ToolStripLabel();
+            this.dgw_odenmemisK = new MetroFramework.Controls.MetroGrid();
+            this.toolStrip5 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.lbl_toplamK = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel23 = new System.Windows.Forms.ToolStripLabel();
             this.mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
             this.mySqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -132,6 +152,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
             this.toolStrip3.SuspendLayout();
+            this.metroTabControl1.SuspendLayout();
+            this.metroTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
+            this.splitContainer6.Panel2.SuspendLayout();
+            this.splitContainer6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_odenmemisG)).BeginInit();
+            this.toolStrip4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_odenmemisK)).BeginInit();
+            this.toolStrip5.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -442,8 +472,12 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1338, 661);
-            this.splitContainer1.SplitterDistance = 348;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.metroTabControl1);
+            this.splitContainer1.Size = new System.Drawing.Size(1338, 669);
+            this.splitContainer1.SplitterDistance = 338;
             this.splitContainer1.SplitterIncrement = 2;
             this.splitContainer1.TabIndex = 4;
             // 
@@ -461,8 +495,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.toolStrip3);
-            this.splitContainer2.Size = new System.Drawing.Size(1338, 348);
-            this.splitContainer2.SplitterDistance = 319;
+            this.splitContainer2.Size = new System.Drawing.Size(1338, 338);
+            this.splitContainer2.SplitterDistance = 296;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -478,7 +512,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer3.Size = new System.Drawing.Size(1338, 319);
+            this.splitContainer3.Size = new System.Drawing.Size(1338, 296);
             this.splitContainer3.SplitterDistance = 331;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -487,16 +521,19 @@
             chartArea5.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea5);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend5.Name = "Legend1";
+            legend5.TextWrapThreshold = 20;
+            legend5.TitleAlignment = System.Drawing.StringAlignment.Near;
             this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
             series5.ChartArea = "ChartArea1";
             series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series5.Legend = "Legend1";
-            series5.Name = "Series1";
+            series5.Name = "pieChart";
             this.chart1.Series.Add(series5);
-            this.chart1.Size = new System.Drawing.Size(331, 319);
+            this.chart1.Size = new System.Drawing.Size(331, 296);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -513,7 +550,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer4.Size = new System.Drawing.Size(1003, 319);
+            this.splitContainer4.Size = new System.Drawing.Size(1003, 296);
             this.splitContainer4.SplitterDistance = 332;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -522,7 +559,9 @@
             chartArea6.Name = "ChartArea1";
             this.chart2.ChartAreas.Add(chartArea6);
             this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend6.Name = "Legend1";
+            legend6.TextWrapThreshold = 30;
             this.chart2.Legends.Add(legend6);
             this.chart2.Location = new System.Drawing.Point(0, 0);
             this.chart2.Name = "chart2";
@@ -531,7 +570,7 @@
             series6.Legend = "Legend1";
             series6.Name = "Series1";
             this.chart2.Series.Add(series6);
-            this.chart2.Size = new System.Drawing.Size(332, 319);
+            this.chart2.Size = new System.Drawing.Size(332, 296);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
             // 
@@ -548,7 +587,7 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.chart4);
-            this.splitContainer5.Size = new System.Drawing.Size(667, 319);
+            this.splitContainer5.Size = new System.Drawing.Size(667, 296);
             this.splitContainer5.SplitterDistance = 332;
             this.splitContainer5.TabIndex = 0;
             // 
@@ -557,7 +596,9 @@
             chartArea7.Name = "ChartArea1";
             this.chart3.ChartAreas.Add(chartArea7);
             this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend7.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend7.Name = "Legend1";
+            legend7.TextWrapThreshold = 30;
             this.chart3.Legends.Add(legend7);
             this.chart3.Location = new System.Drawing.Point(0, 0);
             this.chart3.Name = "chart3";
@@ -566,7 +607,7 @@
             series7.Legend = "Legend1";
             series7.Name = "Series1";
             this.chart3.Series.Add(series7);
-            this.chart3.Size = new System.Drawing.Size(332, 319);
+            this.chart3.Size = new System.Drawing.Size(332, 296);
             this.chart3.TabIndex = 1;
             this.chart3.Text = "chart3";
             // 
@@ -575,7 +616,9 @@
             chartArea8.Name = "ChartArea1";
             this.chart4.ChartAreas.Add(chartArea8);
             this.chart4.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend8.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend8.Name = "Legend1";
+            legend8.TextWrapThreshold = 30;
             this.chart4.Legends.Add(legend8);
             this.chart4.Location = new System.Drawing.Point(0, 0);
             this.chart4.Name = "chart4";
@@ -584,7 +627,7 @@
             series8.Legend = "Legend1";
             series8.Name = "Series1";
             this.chart4.Series.Add(series8);
-            this.chart4.Size = new System.Drawing.Size(331, 319);
+            this.chart4.Size = new System.Drawing.Size(331, 296);
             this.chart4.TabIndex = 1;
             this.chart4.Text = "chart4";
             // 
@@ -613,7 +656,7 @@
             this.lbl_odenmemisG});
             this.toolStrip3.Location = new System.Drawing.Point(0, 0);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(1338, 25);
+            this.toolStrip3.Size = new System.Drawing.Size(1338, 38);
             this.toolStrip3.TabIndex = 3;
             this.toolStrip3.Text = "toolStrip3";
             // 
@@ -622,114 +665,344 @@
             this.toolStripLabel15.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel15.Name = "toolStripLabel15";
-            this.toolStripLabel15.Size = new System.Drawing.Size(167, 22);
+            this.toolStripLabel15.Size = new System.Drawing.Size(167, 35);
             this.toolStripLabel15.Text = "Toplam Alınan Ödeme :";
             // 
             // lbl_odenmisK
             // 
             this.lbl_odenmisK.Name = "lbl_odenmisK";
-            this.lbl_odenmisK.Size = new System.Drawing.Size(13, 22);
+            this.lbl_odenmisK.Size = new System.Drawing.Size(13, 35);
             this.lbl_odenmisK.Text = "0";
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 38);
             // 
             // toolStripLabel16
             // 
             this.toolStripLabel16.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel16.Name = "toolStripLabel16";
-            this.toolStripLabel16.Size = new System.Drawing.Size(90, 22);
+            this.toolStripLabel16.Size = new System.Drawing.Size(90, 35);
             this.toolStripLabel16.Text = "Açık Avans :";
             // 
             // lbl_avans
             // 
             this.lbl_avans.Name = "lbl_avans";
-            this.lbl_avans.Size = new System.Drawing.Size(13, 22);
+            this.lbl_avans.Size = new System.Drawing.Size(13, 35);
             this.lbl_avans.Text = "0";
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 38);
             // 
             // toolStripLabel17
             // 
             this.toolStripLabel17.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel17.Name = "toolStripLabel17";
-            this.toolStripLabel17.Size = new System.Drawing.Size(112, 22);
+            this.toolStripLabel17.Size = new System.Drawing.Size(112, 35);
             this.toolStripLabel17.Text = "Alınan Ödeme :";
             // 
             // lbl_alOdeme
             // 
             this.lbl_alOdeme.Name = "lbl_alOdeme";
-            this.lbl_alOdeme.Size = new System.Drawing.Size(13, 22);
+            this.lbl_alOdeme.Size = new System.Drawing.Size(13, 35);
             this.lbl_alOdeme.Text = "0";
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 38);
             // 
             // toolStripLabel18
             // 
             this.toolStripLabel18.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel18.Name = "toolStripLabel18";
-            this.toolStripLabel18.Size = new System.Drawing.Size(175, 22);
+            this.toolStripLabel18.Size = new System.Drawing.Size(175, 35);
             this.toolStripLabel18.Text = "Toplam Yapılan Ödeme :";
             // 
             // lbl_odenmisG
             // 
             this.lbl_odenmisG.Name = "lbl_odenmisG";
-            this.lbl_odenmisG.Size = new System.Drawing.Size(13, 22);
+            this.lbl_odenmisG.Size = new System.Drawing.Size(13, 35);
             this.lbl_odenmisG.Text = "0";
             // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 38);
             // 
             // toolStripLabel19
             // 
             this.toolStripLabel19.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel19.Name = "toolStripLabel19";
-            this.toolStripLabel19.Size = new System.Drawing.Size(194, 22);
+            this.toolStripLabel19.Size = new System.Drawing.Size(194, 35);
             this.toolStripLabel19.Text = "Ödenmemiş Kesilen Fatura :";
             // 
             // lbl_odenmemisK
             // 
             this.lbl_odenmemisK.Name = "lbl_odenmemisK";
-            this.lbl_odenmemisK.Size = new System.Drawing.Size(13, 22);
+            this.lbl_odenmemisK.Size = new System.Drawing.Size(13, 35);
             this.lbl_odenmemisK.Text = "0";
             // 
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator15.Size = new System.Drawing.Size(6, 38);
             // 
             // toolStripLabel20
             // 
             this.toolStripLabel20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel20.Name = "toolStripLabel20";
-            this.toolStripLabel20.Size = new System.Drawing.Size(185, 22);
+            this.toolStripLabel20.Size = new System.Drawing.Size(185, 35);
             this.toolStripLabel20.Text = "Ödenmemiş Gelen Fatura :";
             // 
             // lbl_odenmemisG
             // 
             this.lbl_odenmemisG.Name = "lbl_odenmemisG";
-            this.lbl_odenmemisG.Size = new System.Drawing.Size(13, 22);
+            this.lbl_odenmemisG.Size = new System.Drawing.Size(13, 35);
             this.lbl_odenmemisG.Text = "0";
+            // 
+            // metroTabControl1
+            // 
+            this.metroTabControl1.Controls.Add(this.metroTabPage1);
+            this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.metroTabControl1.Name = "metroTabControl1";
+            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.Size = new System.Drawing.Size(1338, 327);
+            this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroTabControl1.TabIndex = 0;
+            this.metroTabControl1.UseCustomBackColor = true;
+            this.metroTabControl1.UseCustomForeColor = true;
+            this.metroTabControl1.UseSelectable = true;
+            this.metroTabControl1.UseStyleColors = true;
+            // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.metroTabPage1.Controls.Add(this.splitContainer6);
+            this.metroTabPage1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTabPage1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.HorizontalScrollbarSize = 0;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(1330, 285);
+            this.metroTabPage1.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroTabPage1.TabIndex = 0;
+            this.metroTabPage1.Text = "ÖDENMEMİŞ FATURALAR";
+            this.metroTabPage1.UseCustomBackColor = true;
+            this.metroTabPage1.UseCustomForeColor = true;
+            this.metroTabPage1.UseStyleColors = true;
+            this.metroTabPage1.UseVisualStyleBackColor = true;
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.VerticalScrollbarSize = 0;
+            // 
+            // splitContainer6
+            // 
+            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer6.Name = "splitContainer6";
+            // 
+            // splitContainer6.Panel1
+            // 
+            this.splitContainer6.Panel1.Controls.Add(this.dgw_odenmemisG);
+            this.splitContainer6.Panel1.Controls.Add(this.toolStrip4);
+            // 
+            // splitContainer6.Panel2
+            // 
+            this.splitContainer6.Panel2.Controls.Add(this.dgw_odenmemisK);
+            this.splitContainer6.Panel2.Controls.Add(this.toolStrip5);
+            this.splitContainer6.Size = new System.Drawing.Size(1330, 285);
+            this.splitContainer6.SplitterDistance = 665;
+            this.splitContainer6.TabIndex = 2;
+            // 
+            // dgw_odenmemisG
+            // 
+            this.dgw_odenmemisG.AllowUserToResizeRows = false;
+            this.dgw_odenmemisG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgw_odenmemisG.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgw_odenmemisG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgw_odenmemisG.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgw_odenmemisG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgw_odenmemisG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgw_odenmemisG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgw_odenmemisG.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgw_odenmemisG.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgw_odenmemisG.EnableHeadersVisualStyles = false;
+            this.dgw_odenmemisG.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgw_odenmemisG.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgw_odenmemisG.Location = new System.Drawing.Point(0, 0);
+            this.dgw_odenmemisG.Name = "dgw_odenmemisG";
+            this.dgw_odenmemisG.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgw_odenmemisG.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgw_odenmemisG.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgw_odenmemisG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgw_odenmemisG.Size = new System.Drawing.Size(665, 260);
+            this.dgw_odenmemisG.Style = MetroFramework.MetroColorStyle.Silver;
+            this.dgw_odenmemisG.TabIndex = 1;
+            this.dgw_odenmemisG.UseCustomBackColor = true;
+            this.dgw_odenmemisG.UseCustomForeColor = true;
+            this.dgw_odenmemisG.UseStyleColors = true;
+            // 
+            // toolStrip4
+            // 
+            this.toolStrip4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip4.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton3,
+            this.lbl_toplamG,
+            this.toolStripLabel22});
+            this.toolStrip4.Location = new System.Drawing.Point(0, 260);
+            this.toolStrip4.Name = "toolStrip4";
+            this.toolStrip4.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStrip4.Size = new System.Drawing.Size(665, 25);
+            this.toolStrip4.TabIndex = 0;
+            this.toolStrip4.Text = "toolStrip4";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = global::MERP_V2.Properties.Resources.appbar_printer_text;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(67, 22);
+            this.toolStripButton3.Text = "YAZDIR";
+            // 
+            // lbl_toplamG
+            // 
+            this.lbl_toplamG.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.lbl_toplamG.Name = "lbl_toplamG";
+            this.lbl_toplamG.Size = new System.Drawing.Size(13, 22);
+            this.lbl_toplamG.Text = "0";
+            // 
+            // toolStripLabel22
+            // 
+            this.toolStripLabel22.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel22.Name = "toolStripLabel22";
+            this.toolStripLabel22.Size = new System.Drawing.Size(61, 22);
+            this.toolStripLabel22.Text = "TOPLAM :";
+            // 
+            // dgw_odenmemisK
+            // 
+            this.dgw_odenmemisK.AllowUserToResizeRows = false;
+            this.dgw_odenmemisK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgw_odenmemisK.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgw_odenmemisK.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgw_odenmemisK.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgw_odenmemisK.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgw_odenmemisK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgw_odenmemisK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgw_odenmemisK.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgw_odenmemisK.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgw_odenmemisK.EnableHeadersVisualStyles = false;
+            this.dgw_odenmemisK.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgw_odenmemisK.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgw_odenmemisK.Location = new System.Drawing.Point(0, 0);
+            this.dgw_odenmemisK.Name = "dgw_odenmemisK";
+            this.dgw_odenmemisK.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgw_odenmemisK.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgw_odenmemisK.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgw_odenmemisK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgw_odenmemisK.Size = new System.Drawing.Size(661, 260);
+            this.dgw_odenmemisK.Style = MetroFramework.MetroColorStyle.Silver;
+            this.dgw_odenmemisK.TabIndex = 2;
+            this.dgw_odenmemisK.UseCustomBackColor = true;
+            this.dgw_odenmemisK.UseCustomForeColor = true;
+            this.dgw_odenmemisK.UseStyleColors = true;
+            // 
+            // toolStrip5
+            // 
+            this.toolStrip5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip5.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton4,
+            this.lbl_toplamK,
+            this.toolStripLabel23});
+            this.toolStrip5.Location = new System.Drawing.Point(0, 260);
+            this.toolStrip5.Name = "toolStrip5";
+            this.toolStrip5.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStrip5.Size = new System.Drawing.Size(661, 25);
+            this.toolStrip5.TabIndex = 1;
+            this.toolStrip5.Text = "toolStrip5";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = global::MERP_V2.Properties.Resources.appbar_printer_text;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(67, 22);
+            this.toolStripButton4.Text = "YAZDIR";
+            // 
+            // lbl_toplamK
+            // 
+            this.lbl_toplamK.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.lbl_toplamK.Name = "lbl_toplamK";
+            this.lbl_toplamK.Size = new System.Drawing.Size(13, 22);
+            this.lbl_toplamK.Text = "0";
+            // 
+            // toolStripLabel23
+            // 
+            this.toolStripLabel23.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel23.Name = "toolStripLabel23";
+            this.toolStripLabel23.Size = new System.Drawing.Size(61, 22);
+            this.toolStripLabel23.Text = "TOPLAM :";
             // 
             // mySqlConnection
             // 
@@ -746,10 +1019,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.ClientSize = new System.Drawing.Size(1378, 788);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProjeyeGoreRapor";
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Projeye Göre Rapor";
@@ -760,6 +1034,7 @@
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -785,6 +1060,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
+            this.metroTabControl1.ResumeLayout(false);
+            this.metroTabPage1.ResumeLayout(false);
+            this.splitContainer6.Panel1.ResumeLayout(false);
+            this.splitContainer6.Panel1.PerformLayout();
+            this.splitContainer6.Panel2.ResumeLayout(false);
+            this.splitContainer6.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
+            this.splitContainer6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_odenmemisG)).EndInit();
+            this.toolStrip4.ResumeLayout(false);
+            this.toolStrip4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_odenmemisK)).EndInit();
+            this.toolStrip5.ResumeLayout(false);
+            this.toolStrip5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -851,11 +1140,24 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.SplitContainer splitContainer5;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
         private MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand;
+        private MetroFramework.Controls.MetroTabControl metroTabControl1;
+        private MetroFramework.Controls.MetroTabPage metroTabPage1;
+        private System.Windows.Forms.SplitContainer splitContainer6;
+        private MetroFramework.Controls.MetroGrid dgw_odenmemisG;
+        private System.Windows.Forms.ToolStrip toolStrip4;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private MetroFramework.Controls.MetroGrid dgw_odenmemisK;
+        private System.Windows.Forms.ToolStrip toolStrip5;
+        private System.Windows.Forms.ToolStripLabel lbl_toplamG;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel22;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripLabel lbl_toplamK;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel23;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
     }
 }

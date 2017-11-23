@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiparisEmriDuzenle));
             this.btn_duzenle = new MetroFramework.Controls.MetroButton();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.rcb_aciklama = new System.Windows.Forms.RichTextBox();
@@ -519,6 +520,7 @@
             this.Controls.Add(this.cmb_birim);
             this.Controls.Add(this.rbVerilen);
             this.Controls.Add(this.rbGelen);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SiparisEmriDuzenle";

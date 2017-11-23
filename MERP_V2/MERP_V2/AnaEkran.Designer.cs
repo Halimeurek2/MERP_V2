@@ -564,6 +564,7 @@
             this.Name = "AnaEkran";
             this.Padding = new System.Windows.Forms.Padding(23, 60, 23, 20);
             this.Style = MetroFramework.MetroColorStyle.Red;
+            this.Text = "Manuel ERP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

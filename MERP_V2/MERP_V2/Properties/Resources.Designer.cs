@@ -133,6 +133,16 @@ namespace MERP_V2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap appbar_printer_text {
+            get {
+                object obj = ResourceManager.GetObject("appbar_printer_text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap appbar_question {
             get {
                 object obj = ResourceManager.GetObject("appbar_question", resourceCulture);

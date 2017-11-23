@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiparisEmriGiris));
             this.rbVerilen = new MetroFramework.Controls.MetroRadioButton();
             this.rbGelen = new MetroFramework.Controls.MetroRadioButton();
             this.date_teslim = new MetroFramework.Controls.MetroDateTime();
@@ -506,6 +507,7 @@
             this.Controls.Add(this.cmb_proje_no);
             this.Controls.Add(this.rbVerilen);
             this.Controls.Add(this.rbGelen);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SiparisEmriGiris";

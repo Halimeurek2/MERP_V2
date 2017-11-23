@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjeGiris));
             this.rbProje = new MetroFramework.Controls.MetroRadioButton();
             this.rbSeri = new MetroFramework.Controls.MetroRadioButton();
             this.lbl_birim = new MetroFramework.Controls.MetroLabel();
@@ -553,6 +554,7 @@
             this.Controls.Add(this.lbl_harcamalar);
             this.Controls.Add(this.rbProje);
             this.Controls.Add(this.rbSeri);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ProjeGiris";

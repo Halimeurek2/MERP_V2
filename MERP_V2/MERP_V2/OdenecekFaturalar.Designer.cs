@@ -39,8 +39,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OdenecekFaturalar));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.lbl_prjNo = new System.Windows.Forms.ToolStripLabel();
+            this.lbl_proje_no = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
@@ -101,7 +102,7 @@
             this.splitContainer25 = new System.Windows.Forms.SplitContainer();
             this.lbl_gnl3 = new MetroFramework.Controls.MetroLabel();
             this.lbl_gnlfrm3 = new MetroFramework.Controls.MetroLabel();
-            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.dgw_maliOzet = new MetroFramework.Controls.MetroGrid();
             this.Tanım = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ocak = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,6 +116,8 @@
             this.ekim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kasim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aralik = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
+            this.mySqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -223,7 +226,7 @@
             this.splitContainer25.Panel1.SuspendLayout();
             this.splitContainer25.Panel2.SuspendLayout();
             this.splitContainer25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_maliOzet)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -231,7 +234,7 @@
             this.toolStrip1.BackColor = System.Drawing.Color.White;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lbl_prjNo,
+            this.lbl_proje_no,
             this.toolStripLabel3});
             this.toolStrip1.Location = new System.Drawing.Point(20, 60);
             this.toolStrip1.Name = "toolStrip1";
@@ -239,12 +242,12 @@
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // lbl_prjNo
+            // lbl_proje_no
             // 
-            this.lbl_prjNo.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.lbl_prjNo.Name = "lbl_prjNo";
-            this.lbl_prjNo.Size = new System.Drawing.Size(13, 22);
-            this.lbl_prjNo.Text = "0";
+            this.lbl_proje_no.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.lbl_proje_no.Name = "lbl_proje_no";
+            this.lbl_proje_no.Size = new System.Drawing.Size(13, 22);
+            this.lbl_proje_no.Text = "0";
             // 
             // toolStripLabel3
             // 
@@ -375,7 +378,7 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.metroGrid1);
+            this.splitContainer2.Panel2.Controls.Add(this.dgw_maliOzet);
             this.splitContainer2.Size = new System.Drawing.Size(1338, 368);
             this.splitContainer2.SplitterDistance = 200;
             this.splitContainer2.SplitterWidth = 20;
@@ -456,7 +459,7 @@
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
             this.splitContainer5.Size = new System.Drawing.Size(661, 155);
-            this.splitContainer5.SplitterDistance = 46;
+            this.splitContainer5.SplitterDistance = 51;
             this.splitContainer5.TabIndex = 4;
             // 
             // splitContainer16
@@ -472,7 +475,7 @@
             // splitContainer16.Panel2
             // 
             this.splitContainer16.Panel2.Controls.Add(this.lbl_firma1);
-            this.splitContainer16.Size = new System.Drawing.Size(661, 46);
+            this.splitContainer16.Size = new System.Drawing.Size(661, 51);
             this.splitContainer16.SplitterDistance = 253;
             this.splitContainer16.TabIndex = 0;
             // 
@@ -524,8 +527,8 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.splitContainer18);
-            this.splitContainer6.Size = new System.Drawing.Size(661, 105);
-            this.splitContainer6.SplitterDistance = 44;
+            this.splitContainer6.Size = new System.Drawing.Size(661, 100);
+            this.splitContainer6.SplitterDistance = 41;
             this.splitContainer6.TabIndex = 0;
             // 
             // splitContainer17
@@ -541,7 +544,7 @@
             // splitContainer17.Panel2
             // 
             this.splitContainer17.Panel2.Controls.Add(this.lbl_firma2);
-            this.splitContainer17.Size = new System.Drawing.Size(661, 44);
+            this.splitContainer17.Size = new System.Drawing.Size(661, 41);
             this.splitContainer17.SplitterDistance = 253;
             this.splitContainer17.TabIndex = 0;
             // 
@@ -592,7 +595,7 @@
             // splitContainer18.Panel2
             // 
             this.splitContainer18.Panel2.Controls.Add(this.lbl_firma3);
-            this.splitContainer18.Size = new System.Drawing.Size(661, 57);
+            this.splitContainer18.Size = new System.Drawing.Size(661, 55);
             this.splitContainer18.SplitterDistance = 253;
             this.splitContainer18.TabIndex = 0;
             // 
@@ -681,7 +684,7 @@
             // 
             this.splitContainer7.Panel2.Controls.Add(this.splitContainer8);
             this.splitContainer7.Size = new System.Drawing.Size(657, 155);
-            this.splitContainer7.SplitterDistance = 46;
+            this.splitContainer7.SplitterDistance = 51;
             this.splitContainer7.TabIndex = 3;
             // 
             // splitContainer13
@@ -697,7 +700,7 @@
             // splitContainer13.Panel2
             // 
             this.splitContainer13.Panel2.Controls.Add(this.lbl_elfrm1);
-            this.splitContainer13.Size = new System.Drawing.Size(657, 46);
+            this.splitContainer13.Size = new System.Drawing.Size(657, 51);
             this.splitContainer13.SplitterDistance = 270;
             this.splitContainer13.TabIndex = 36;
             // 
@@ -749,8 +752,8 @@
             // splitContainer8.Panel2
             // 
             this.splitContainer8.Panel2.Controls.Add(this.splitContainer15);
-            this.splitContainer8.Size = new System.Drawing.Size(657, 105);
-            this.splitContainer8.SplitterDistance = 49;
+            this.splitContainer8.Size = new System.Drawing.Size(657, 100);
+            this.splitContainer8.SplitterDistance = 46;
             this.splitContainer8.TabIndex = 0;
             // 
             // splitContainer14
@@ -766,7 +769,7 @@
             // splitContainer14.Panel2
             // 
             this.splitContainer14.Panel2.Controls.Add(this.lbl_elfrm2);
-            this.splitContainer14.Size = new System.Drawing.Size(657, 49);
+            this.splitContainer14.Size = new System.Drawing.Size(657, 46);
             this.splitContainer14.SplitterDistance = 270;
             this.splitContainer14.TabIndex = 0;
             // 
@@ -817,7 +820,7 @@
             // splitContainer15.Panel2
             // 
             this.splitContainer15.Panel2.Controls.Add(this.lbl_elfrm3);
-            this.splitContainer15.Size = new System.Drawing.Size(657, 52);
+            this.splitContainer15.Size = new System.Drawing.Size(657, 50);
             this.splitContainer15.SplitterDistance = 272;
             this.splitContainer15.TabIndex = 0;
             // 
@@ -885,7 +888,7 @@
             // 
             this.splitContainer9.Panel2.Controls.Add(this.splitContainer10);
             this.splitContainer9.Size = new System.Drawing.Size(657, 155);
-            this.splitContainer9.SplitterDistance = 77;
+            this.splitContainer9.SplitterDistance = 51;
             this.splitContainer9.TabIndex = 3;
             // 
             // splitContainer19
@@ -901,7 +904,7 @@
             // splitContainer19.Panel2
             // 
             this.splitContainer19.Panel2.Controls.Add(this.lbl_mekfrm1);
-            this.splitContainer19.Size = new System.Drawing.Size(657, 77);
+            this.splitContainer19.Size = new System.Drawing.Size(657, 51);
             this.splitContainer19.SplitterDistance = 254;
             this.splitContainer19.TabIndex = 0;
             // 
@@ -953,8 +956,8 @@
             // splitContainer10.Panel2
             // 
             this.splitContainer10.Panel2.Controls.Add(this.splitContainer21);
-            this.splitContainer10.Size = new System.Drawing.Size(657, 74);
-            this.splitContainer10.SplitterDistance = 34;
+            this.splitContainer10.Size = new System.Drawing.Size(657, 100);
+            this.splitContainer10.SplitterDistance = 45;
             this.splitContainer10.TabIndex = 0;
             // 
             // splitContainer20
@@ -970,7 +973,7 @@
             // splitContainer20.Panel2
             // 
             this.splitContainer20.Panel2.Controls.Add(this.lbl_mekfrm2);
-            this.splitContainer20.Size = new System.Drawing.Size(657, 34);
+            this.splitContainer20.Size = new System.Drawing.Size(657, 45);
             this.splitContainer20.SplitterDistance = 254;
             this.splitContainer20.TabIndex = 0;
             // 
@@ -1021,7 +1024,7 @@
             // splitContainer21.Panel2
             // 
             this.splitContainer21.Panel2.Controls.Add(this.lbl_mekfrm3);
-            this.splitContainer21.Size = new System.Drawing.Size(657, 36);
+            this.splitContainer21.Size = new System.Drawing.Size(657, 51);
             this.splitContainer21.SplitterDistance = 254;
             this.splitContainer21.TabIndex = 0;
             // 
@@ -1097,7 +1100,7 @@
             // 
             this.splitContainer11.Panel2.Controls.Add(this.splitContainer23);
             this.splitContainer11.Size = new System.Drawing.Size(657, 155);
-            this.splitContainer11.SplitterDistance = 46;
+            this.splitContainer11.SplitterDistance = 51;
             this.splitContainer11.TabIndex = 3;
             // 
             // splitContainer22
@@ -1113,7 +1116,7 @@
             // splitContainer22.Panel2
             // 
             this.splitContainer22.Panel2.Controls.Add(this.lbl_gnlfrm1);
-            this.splitContainer22.Size = new System.Drawing.Size(657, 46);
+            this.splitContainer22.Size = new System.Drawing.Size(657, 51);
             this.splitContainer22.SplitterDistance = 259;
             this.splitContainer22.TabIndex = 0;
             // 
@@ -1165,8 +1168,8 @@
             // splitContainer23.Panel2
             // 
             this.splitContainer23.Panel2.Controls.Add(this.splitContainer25);
-            this.splitContainer23.Size = new System.Drawing.Size(657, 105);
-            this.splitContainer23.SplitterDistance = 49;
+            this.splitContainer23.Size = new System.Drawing.Size(657, 100);
+            this.splitContainer23.SplitterDistance = 46;
             this.splitContainer23.TabIndex = 0;
             // 
             // splitContainer24
@@ -1182,7 +1185,7 @@
             // splitContainer24.Panel2
             // 
             this.splitContainer24.Panel2.Controls.Add(this.lbl_gnlfrm2);
-            this.splitContainer24.Size = new System.Drawing.Size(657, 49);
+            this.splitContainer24.Size = new System.Drawing.Size(657, 46);
             this.splitContainer24.SplitterDistance = 259;
             this.splitContainer24.TabIndex = 0;
             // 
@@ -1233,7 +1236,7 @@
             // splitContainer25.Panel2
             // 
             this.splitContainer25.Panel2.Controls.Add(this.lbl_gnlfrm3);
-            this.splitContainer25.Size = new System.Drawing.Size(657, 52);
+            this.splitContainer25.Size = new System.Drawing.Size(657, 50);
             this.splitContainer25.SplitterDistance = 259;
             this.splitContainer25.TabIndex = 0;
             // 
@@ -1271,14 +1274,14 @@
             this.lbl_gnlfrm3.UseCustomForeColor = true;
             this.lbl_gnlfrm3.UseStyleColors = true;
             // 
-            // metroGrid1
+            // dgw_maliOzet
             // 
-            this.metroGrid1.AllowUserToResizeRows = false;
-            this.metroGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgw_maliOzet.AllowUserToResizeRows = false;
+            this.dgw_maliOzet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgw_maliOzet.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgw_maliOzet.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgw_maliOzet.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgw_maliOzet.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1286,9 +1289,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgw_maliOzet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgw_maliOzet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgw_maliOzet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tanım,
             this.ocak,
             this.subat,
@@ -1309,14 +1312,14 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.metroGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroGrid1.EnableHeadersVisualStyles = false;
-            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(0, 0);
-            this.metroGrid1.Name = "metroGrid1";
-            this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgw_maliOzet.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgw_maliOzet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgw_maliOzet.EnableHeadersVisualStyles = false;
+            this.dgw_maliOzet.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgw_maliOzet.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgw_maliOzet.Location = new System.Drawing.Point(0, 0);
+            this.dgw_maliOzet.Name = "dgw_maliOzet";
+            this.dgw_maliOzet.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1324,20 +1327,20 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.metroGrid1.RowHeadersVisible = false;
-            this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgw_maliOzet.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgw_maliOzet.RowHeadersVisible = false;
+            this.dgw_maliOzet.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.metroGrid1.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(1338, 148);
-            this.metroGrid1.Style = MetroFramework.MetroColorStyle.Silver;
-            this.metroGrid1.TabIndex = 1;
-            this.metroGrid1.UseCustomBackColor = true;
-            this.metroGrid1.UseCustomForeColor = true;
-            this.metroGrid1.UseStyleColors = true;
+            this.dgw_maliOzet.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgw_maliOzet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgw_maliOzet.Size = new System.Drawing.Size(1338, 148);
+            this.dgw_maliOzet.Style = MetroFramework.MetroColorStyle.Silver;
+            this.dgw_maliOzet.TabIndex = 1;
+            this.dgw_maliOzet.UseCustomBackColor = true;
+            this.dgw_maliOzet.UseCustomForeColor = true;
+            this.dgw_maliOzet.UseStyleColors = true;
             // 
             // Tanım
             // 
@@ -1408,6 +1411,17 @@
             this.aralik.HeaderText = "ARALIK";
             this.aralik.Name = "aralik";
             // 
+            // mySqlConnection
+            // 
+            this.mySqlConnection.ConnectionString = "server=localhost;database=merp_dbv1;user id=root;password=root";
+            // 
+            // mySqlCommand
+            // 
+            this.mySqlCommand.CacheAge = 60;
+            this.mySqlCommand.Connection = this.mySqlConnection;
+            this.mySqlCommand.EnableCaching = false;
+            this.mySqlCommand.Transaction = null;
+            // 
             // OdenecekFaturalar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1415,6 +1429,7 @@
             this.ClientSize = new System.Drawing.Size(1378, 780);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OdenecekFaturalar";
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "Ödenecek Faturalar";
@@ -1553,7 +1568,7 @@
             this.splitContainer25.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer25)).EndInit();
             this.splitContainer25.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_maliOzet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1562,7 +1577,6 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel lbl_prjNo;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
@@ -1618,7 +1632,7 @@
         private System.Windows.Forms.SplitContainer splitContainer25;
         private MetroFramework.Controls.MetroLabel lbl_gnl3;
         private MetroFramework.Controls.MetroLabel lbl_gnlfrm3;
-        private MetroFramework.Controls.MetroGrid metroGrid1;
+        private MetroFramework.Controls.MetroGrid dgw_maliOzet;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tanım;
         private System.Windows.Forms.DataGridViewTextBoxColumn ocak;
         private System.Windows.Forms.DataGridViewTextBoxColumn subat;
@@ -1637,5 +1651,8 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        public System.Windows.Forms.ToolStripLabel lbl_proje_no;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand;
     }
 }

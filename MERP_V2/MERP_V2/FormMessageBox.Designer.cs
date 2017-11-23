@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMessageBox));
             this.txt_mesaj = new MetroFramework.Controls.MetroLabel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
@@ -70,6 +71,7 @@
             this.ClientSize = new System.Drawing.Size(522, 134);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.txt_mesaj);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormMessageBox";

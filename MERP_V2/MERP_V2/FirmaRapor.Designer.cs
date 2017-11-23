@@ -37,30 +37,34 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirmaRapor));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.cmb_firma = new System.Windows.Forms.ToolStripComboBox();
-            this.lbl_prjNo = new System.Windows.Forms.ToolStripLabel();
+            this.lbl_proje_no = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.dgw_elektronik = new MetroFramework.Controls.MetroGrid();
             this.firmaIsmi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.siparisToplam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.faturaToplam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.odenenToplam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.dgw_mekanik = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.dgw_genel = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
             this.mySqlDataAdapter = new MySql.Data.MySqlClient.MySqlDataAdapter();
             this.mySqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
@@ -81,7 +85,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel2,
             this.cmb_firma,
-            this.lbl_prjNo,
+            this.lbl_proje_no,
             this.toolStripLabel3});
             this.toolStrip1.Location = new System.Drawing.Point(20, 60);
             this.toolStrip1.Name = "toolStrip1";
@@ -103,13 +107,14 @@
             this.cmb_firma.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_firma.Name = "cmb_firma";
             this.cmb_firma.Size = new System.Drawing.Size(121, 25);
+            this.cmb_firma.SelectedIndexChanged += new System.EventHandler(this.cmb_firma_SelectedIndexChanged);
             // 
-            // lbl_prjNo
+            // lbl_proje_no
             // 
-            this.lbl_prjNo.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.lbl_prjNo.Name = "lbl_prjNo";
-            this.lbl_prjNo.Size = new System.Drawing.Size(13, 22);
-            this.lbl_prjNo.Text = "0";
+            this.lbl_proje_no.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.lbl_proje_no.Name = "lbl_proje_no";
+            this.lbl_proje_no.Size = new System.Drawing.Size(13, 22);
+            this.lbl_proje_no.Text = "0";
             // 
             // toolStripLabel3
             // 
@@ -129,7 +134,7 @@
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 85);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1338, 675);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroTabControl1.TabIndex = 4;
@@ -146,7 +151,7 @@
             this.metroTabPage1.HorizontalScrollbarSize = 0;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(1411, 701);
+            this.metroTabPage1.Size = new System.Drawing.Size(1330, 633);
             this.metroTabPage1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Elektronik";
@@ -164,7 +169,6 @@
             this.dgw_elektronik.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgw_elektronik.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgw_elektronik.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgw_elektronik.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgw_elektronik.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
@@ -177,9 +181,10 @@
             this.dgw_elektronik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgw_elektronik.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.firmaIsmi,
-            this.siparisToplam,
+            this.Column1,
             this.faturaToplam,
-            this.odenenToplam});
+            this.odenenToplam,
+            this.Column2});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -191,7 +196,8 @@
             this.dgw_elektronik.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgw_elektronik.EnableHeadersVisualStyles = false;
             this.dgw_elektronik.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgw_elektronik.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgw_elektronik.GridColor = System.Drawing.Color.Black;
+            this.dgw_elektronik.HighLightPercentage = 0F;
             this.dgw_elektronik.Location = new System.Drawing.Point(0, 0);
             this.dgw_elektronik.Name = "dgw_elektronik";
             this.dgw_elektronik.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -205,8 +211,8 @@
             this.dgw_elektronik.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgw_elektronik.RowHeadersVisible = false;
             this.dgw_elektronik.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgw_elektronik.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgw_elektronik.Size = new System.Drawing.Size(1411, 701);
+            this.dgw_elektronik.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgw_elektronik.Size = new System.Drawing.Size(1330, 633);
             this.dgw_elektronik.Style = MetroFramework.MetroColorStyle.Silver;
             this.dgw_elektronik.TabIndex = 2;
             this.dgw_elektronik.UseCustomBackColor = true;
@@ -218,10 +224,10 @@
             this.firmaIsmi.HeaderText = "FİRMA İSMİ";
             this.firmaIsmi.Name = "firmaIsmi";
             // 
-            // siparisToplam
+            // Column1
             // 
-            this.siparisToplam.HeaderText = "SİPARİŞ TOPLAM";
-            this.siparisToplam.Name = "siparisToplam";
+            this.Column1.HeaderText = "SİPARİS TOPLAM";
+            this.Column1.Name = "Column1";
             // 
             // faturaToplam
             // 
@@ -233,6 +239,11 @@
             this.odenenToplam.HeaderText = "ÖDENEN TOPLAM";
             this.odenenToplam.Name = "odenenToplam";
             // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "KALAN";
+            this.Column2.Name = "Column2";
+            // 
             // metroTabPage2
             // 
             this.metroTabPage2.Controls.Add(this.dgw_mekanik);
@@ -241,7 +252,7 @@
             this.metroTabPage2.HorizontalScrollbarSize = 0;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(1411, 701);
+            this.metroTabPage2.Size = new System.Drawing.Size(1330, 633);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Mekanik";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -269,7 +280,8 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewTextBoxColumn4,
+            this.Column3});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -296,7 +308,7 @@
             this.dgw_mekanik.RowHeadersVisible = false;
             this.dgw_mekanik.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgw_mekanik.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgw_mekanik.Size = new System.Drawing.Size(1411, 701);
+            this.dgw_mekanik.Size = new System.Drawing.Size(1330, 633);
             this.dgw_mekanik.Style = MetroFramework.MetroColorStyle.Silver;
             this.dgw_mekanik.TabIndex = 3;
             this.dgw_mekanik.UseCustomBackColor = true;
@@ -322,6 +334,11 @@
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "ÖDENEN TOPLAM";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "KALAN";
+            this.Column3.Name = "Column3";
             // 
             // metroTabPage3
             // 
@@ -359,7 +376,8 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
+            this.dataGridViewTextBoxColumn8,
+            this.Column4});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -413,6 +431,11 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "ÖDENEN TOPLAM";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "KALAN";
+            this.Column4.Name = "Column4";
+            // 
             // mySqlConnection
             // 
             this.mySqlConnection.ConnectionString = "server=localhost;database=merp_dbv1;user id=root;password=root";
@@ -438,6 +461,7 @@
             this.ClientSize = new System.Drawing.Size(1378, 780);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FirmaRapor";
             this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "Firma Rapor";
@@ -470,21 +494,24 @@
         private MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
         private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand;
-        private System.Windows.Forms.ToolStripLabel lbl_prjNo;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private MetroFramework.Controls.MetroGrid dgw_mekanik;
+        private MetroFramework.Controls.MetroGrid dgw_genel;
+        public System.Windows.Forms.ToolStripLabel lbl_proje_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn firmaIsmi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn siparisToplam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn faturaToplam;
         private System.Windows.Forms.DataGridViewTextBoxColumn odenenToplam;
-        private MetroFramework.Controls.MetroGrid dgw_mekanik;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private MetroFramework.Controls.MetroGrid dgw_genel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FaturaGiris));
             this.cmb_avans = new MetroFramework.Controls.MetroCheckBox();
             this.rbKesilen = new MetroFramework.Controls.MetroRadioButton();
             this.rbGelen = new MetroFramework.Controls.MetroRadioButton();
@@ -714,6 +715,7 @@
             this.Controls.Add(this.rbKesilen);
             this.Controls.Add(this.rbGelen);
             this.Controls.Add(this.cmb_durum);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FaturaGiris";
