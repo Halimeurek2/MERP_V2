@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace MERP_V2
@@ -76,9 +77,15 @@ namespace MERP_V2
             for (int i = 0; i < dgw_harcama.Rows.Count - 1; i++)
             {
                 dgw_harcama.Rows[i].Cells[2].Value = hf.Dot2Comma(Convert.ToString(dgw_harcama.Rows[i].Cells[2].Value));
-                toplam_euro = hf.EuroCalculation(Convert.ToString(dgw_harcama.Rows[i].Cells[0].Value), Convert.ToString(dgw_harcama.Rows[i].Cells[2].Value), Convert.ToString(dgw_harcama.Rows[i].Cells[3].Value), toplam_euro);
+                toplam_euro = hf.EuroCalculation(Convert.ToString(Convert.ToDateTime(dgw_harcama.Rows[i].Cells[0].Value)), Convert.ToString(dgw_harcama.Rows[i].Cells[2].Value), Convert.ToString(dgw_harcama.Rows[i].Cells[3].Value), toplam_euro);
                 toplam = Convert.ToString(Convert.ToDecimal(toplam_euro) + Convert.ToDecimal(toplam));
             }
+            
+            if (prjGiris != null)
+            {
+                prjGiris.lbl_harcamalar.Text = string.Format(new CultureInfo("de-DE"), "{0:C2}", Convert.ToDecimal(toplam));
+            }
+            this.Hide();
         }
     }
 }

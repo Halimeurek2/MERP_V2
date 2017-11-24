@@ -16,6 +16,10 @@ namespace MERP_V2
 
         string vade;
 
+        decimal fatura_euro;
+        decimal fatura_dolar;
+        decimal fatura_tl;
+
         public FaturaDuzenle()
         {
             InitializeComponent();
@@ -113,6 +117,78 @@ namespace MERP_V2
                 frmMessageBox = new FormMessageBox();
                 frmMessageBox.txt_mesaj.Text = "Aynı anda hem virgül hem nokta giremezsiniz!";
                 frmMessageBox.Show();
+            }
+            else if ((Convert.ToDateTime(date_ftr_tarih.Value).DayOfWeek == DayOfWeek.Saturday) || ((Convert.ToDateTime(date_ftr_tarih.Value).DayOfWeek == DayOfWeek.Sunday)))
+            {
+                frmMessageBox = new FormMessageBox();
+                frmMessageBox.txt_mesaj.Text = "Lütfen hafta içi olacak bir tarih giriniz!";
+                frmMessageBox.Show();
+            }
+            else
+            {
+                if (txt_fatura_no.Text == "T111" || txt_fatura_no.Text == "M111" || txt_fatura_no.Text == "M222")
+                {
+                    Send();
+                }
+                else if (txt_fatura_no.Text == "A111")
+                {
+                    if (rbGelen.Checked)
+                    {
+                        db.UpdateFaturalar(Convert.ToInt32(lbl_id.Text), Convert.ToString(txt_fatura_no.Text), Convert.ToString(cmb_proje_no.Text), Convert.ToString(cmb_firma.Text), Convert.ToInt32(txt_ftr_vade.Text), Convert.ToDateTime(date_alarm.Value), Convert.ToString(rcb_aciklama.Text), Convert.ToDateTime(date_ftr_tarih.Value), ck_alarm.Checked, Convert.ToDecimal(txt_ftr_tutar.Text), Convert.ToString(cmb_birim.Text), Convert.ToInt32(txt_avans.Text), fatura_euro, fatura_dolar, fatura_tl, Convert.ToString('A'), Convert.ToString(cmb_ftr_tip.Text), Convert.ToString("ODENDI"), Convert.ToString(cmb_se.Text), Convert.ToDateTime(date_odendi.Value), Convert.ToDateTime(DateTime.Now));
+                    }
+                    if (rbKesilen.Checked)
+                    {
+                        db.UpdateFaturalar(Convert.ToInt32(lbl_id.Text), Convert.ToString(txt_fatura_no.Text), Convert.ToString(cmb_proje_no.Text), Convert.ToString(cmb_firma.Text), Convert.ToInt32(txt_ftr_vade.Text), Convert.ToDateTime(date_alarm.Value), Convert.ToString(rcb_aciklama.Text), Convert.ToDateTime(date_ftr_tarih.Value), ck_alarm.Checked, Convert.ToDecimal(txt_ftr_tutar.Text), Convert.ToString(cmb_birim.Text), Convert.ToInt32(txt_avans.Text), fatura_euro, fatura_dolar, fatura_tl, Convert.ToString('V'), Convert.ToString(cmb_ftr_tip.Text), Convert.ToString("ODENDI"), Convert.ToString(cmb_gelense.Text), Convert.ToDateTime(date_odendi.Value), Convert.ToDateTime(DateTime.Now));
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        myReader.Close();
+                        mySqlCommand.CommandText = "SELECT * FROM db_faturalar where fatura_no='" + txt_fatura_no.Text + "'";
+                        myReader = mySqlCommand.ExecuteReader();
+                        while (myReader.Read()) { }
+                        if (myReader.HasRows == false)
+                        {
+                            Send();
+                            myReader.Close();
+                        }
+                        else
+                        {
+                            frmMessageBox = new FormMessageBox();
+                            frmMessageBox.txt_mesaj.Text = "Fatura No önceden kullanılmış!";
+                            frmMessageBox.Show();
+                        }
+                    }
+                    catch { myReader.Close(); }
+                }
+            }
+        }
+
+        public void Send()
+        {
+            if (cmb_durum.Checked)
+            {
+                if (rbGelen.Checked)
+                {
+                    db.UpdateFaturalar(Convert.ToInt32(lbl_id.Text), Convert.ToString(txt_fatura_no.Text), Convert.ToString(cmb_proje_no.Text), Convert.ToString(cmb_firma.Text), Convert.ToInt32(txt_ftr_vade.Text), Convert.ToDateTime(date_alarm.Value), Convert.ToString(rcb_aciklama.Text), Convert.ToDateTime(date_ftr_tarih.Value), ck_alarm.Checked, Convert.ToDecimal(txt_ftr_tutar.Text), Convert.ToString(cmb_birim.Text), Convert.ToInt32(txt_avans.Text), fatura_euro, fatura_dolar, fatura_tl, Convert.ToString('G'), Convert.ToString(cmb_ftr_tip.Text), Convert.ToString("ODENDI"), Convert.ToString(cmb_se.Text), Convert.ToDateTime(date_odendi.Value), Convert.ToDateTime(DateTime.Now));
+                }
+                if (rbKesilen.Checked)
+                {
+                    db.UpdateFaturalar(Convert.ToInt32(lbl_id.Text), Convert.ToString(txt_fatura_no.Text), Convert.ToString(cmb_proje_no.Text), Convert.ToString(cmb_firma.Text), Convert.ToInt32(txt_ftr_vade.Text), Convert.ToDateTime(date_alarm.Value), Convert.ToString(rcb_aciklama.Text), Convert.ToDateTime(date_ftr_tarih.Value), ck_alarm.Checked, Convert.ToDecimal(txt_ftr_tutar.Text), Convert.ToString(cmb_birim.Text), Convert.ToInt32(txt_avans.Text), fatura_euro, fatura_dolar, fatura_tl, Convert.ToString('K'), Convert.ToString(cmb_ftr_tip.Text), Convert.ToString("ODENDI"), Convert.ToString(cmb_gelense.Text), Convert.ToDateTime(date_odendi.Value), Convert.ToDateTime(DateTime.Now));
+                }
+            }
+            else
+            {
+                if (rbGelen.Checked)
+                {
+                    db.UpdateFaturalar(Convert.ToInt32(lbl_id.Text), Convert.ToString(txt_fatura_no.Text), Convert.ToString(cmb_proje_no.Text), Convert.ToString(cmb_firma.Text), Convert.ToInt32(txt_ftr_vade.Text), Convert.ToDateTime(date_alarm.Value), Convert.ToString(rcb_aciklama.Text), Convert.ToDateTime(date_ftr_tarih.Value), ck_alarm.Checked, Convert.ToDecimal(txt_ftr_tutar.Text), Convert.ToString(cmb_birim.Text), Convert.ToInt32(txt_avans.Text), fatura_euro, fatura_dolar, fatura_tl, Convert.ToString('G'), Convert.ToString(cmb_ftr_tip.Text), Convert.ToString("ODENMEDI"), Convert.ToString(cmb_se.Text), Convert.ToDateTime(date_odendi.Value), Convert.ToDateTime(DateTime.Now));
+                }
+                if (rbKesilen.Checked)
+                {
+                    db.UpdateFaturalar(Convert.ToInt32(lbl_id.Text), Convert.ToString(txt_fatura_no.Text), Convert.ToString(cmb_proje_no.Text), Convert.ToString(cmb_firma.Text), Convert.ToInt32(txt_ftr_vade.Text), Convert.ToDateTime(date_alarm.Value), Convert.ToString(rcb_aciklama.Text), Convert.ToDateTime(date_ftr_tarih.Value), ck_alarm.Checked, Convert.ToDecimal(txt_ftr_tutar.Text), Convert.ToString(cmb_birim.Text), Convert.ToInt32(txt_avans.Text), fatura_euro, fatura_dolar, fatura_tl, Convert.ToString('K'), Convert.ToString(cmb_ftr_tip.Text), Convert.ToString("ODENMEDI"), Convert.ToString(cmb_gelense.Text), Convert.ToDateTime(date_odendi.Value), Convert.ToDateTime(DateTime.Now));
+                }
             }
         }
     }

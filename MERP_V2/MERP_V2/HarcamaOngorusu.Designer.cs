@@ -150,7 +150,7 @@
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel5.Location = new System.Drawing.Point(16, 390);
+            this.metroLabel5.Location = new System.Drawing.Point(16, 385);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(156, 19);
             this.metroLabel5.Style = MetroFramework.MetroColorStyle.Red;
@@ -317,7 +317,7 @@
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel2.Location = new System.Drawing.Point(16, 152);
+            this.metroLabel2.Location = new System.Drawing.Point(16, 147);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(156, 19);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Red;

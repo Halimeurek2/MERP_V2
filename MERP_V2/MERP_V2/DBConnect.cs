@@ -168,7 +168,8 @@ namespace MERP_V2
                                      string aciklama,
                                      decimal harcama_toplam,
                                      string harcama_top_birim,
-                                     string tip)
+                                     string tip,
+                                     string proje_durum)
         {
 
             MySqlCommand cmd = new MySqlCommand("INSERT INTO db_projeler (proje_no," +
@@ -185,10 +186,10 @@ namespace MERP_V2
            "proje_aciklama," +
            "harcama_toplam," +
            "harcama_toplam_birim," +
-           "proje_tipi) VALUES (@proje_no,@proje_ismi,@butce,@birim,@proje_euro,@proje_dolar,@proje_tl," +
+           "proje_tipi,proje_durum) VALUES (@proje_no,@proje_ismi,@butce,@birim,@proje_euro,@proje_dolar,@proje_tl," +
            "@musteri,@baslangic,@bitis,@vade,@aciklama," +
            "@harcama_toplam,@harcama_top_birim,"+
-           "@tip)", connection);
+           "@tip,@proje_durum)", connection);
 
             cmd.Parameters.AddWithValue("@proje_no", proje_no);
             cmd.Parameters.AddWithValue("@proje_ismi", proje_ismi);
@@ -205,6 +206,7 @@ namespace MERP_V2
             cmd.Parameters.AddWithValue("@harcama_toplam", harcama_toplam);
             cmd.Parameters.AddWithValue("@harcama_top_birim", harcama_top_birim);
             cmd.Parameters.AddWithValue("@tip", tip);
+            cmd.Parameters.AddWithValue("@proje_durum", proje_durum);
 
 
             //open connection
@@ -623,7 +625,8 @@ namespace MERP_V2
                                     string aciklama,
                                     decimal harcama_toplam,
                                     string harcama_top_birim,
-                                    string tip)
+                                    string tip,
+                                    string proje_durum)
         {
             MySqlCommand cmd = new MySqlCommand("update db_projeler set proje_no=@proje_no," +
            "proje_ismi=@proje_ismi," +
@@ -639,7 +642,7 @@ namespace MERP_V2
            "proje_aciklama=@aciklama," +
            "harcama_toplam=@harcama_toplam," +
            "harcama_toplam_birim=@harcama_top_birim," +
-           "proje_tipi=@tip where proje_id=@id", connection);
+           "proje_tipi=@tip, proje_durum=@proje_durum where proje_id=@id", connection);
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@proje_no", proje_no);
@@ -657,6 +660,7 @@ namespace MERP_V2
             cmd.Parameters.AddWithValue("@harcama_toplam", harcama_toplam);
             cmd.Parameters.AddWithValue("@harcama_top_birim", harcama_top_birim);
             cmd.Parameters.AddWithValue("@tip", tip);
+            cmd.Parameters.AddWithValue("@proje_durum", proje_durum);
 
 
             if (this.OpenConnection() == true)

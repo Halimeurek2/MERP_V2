@@ -49,19 +49,20 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txt_proje_no = new MetroFramework.Controls.MetroTextBox();
-            this.lbl_birim = new MetroFramework.Controls.MetroLabel();
             this.lbl_harcamalar = new MetroFramework.Controls.MetroLabel();
             this.rbProje = new MetroFramework.Controls.MetroRadioButton();
             this.rbSeri = new MetroFramework.Controls.MetroRadioButton();
             this.lbl_id = new MetroFramework.Controls.MetroLabel();
             this.mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
             this.mySqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.cmb_durum = new MetroFramework.Controls.MetroComboBox();
             this.SuspendLayout();
             // 
             // btn_duzenle
             // 
             this.btn_duzenle.Highlight = true;
-            this.btn_duzenle.Location = new System.Drawing.Point(303, 612);
+            this.btn_duzenle.Location = new System.Drawing.Point(303, 655);
             this.btn_duzenle.Name = "btn_duzenle";
             this.btn_duzenle.Size = new System.Drawing.Size(116, 43);
             this.btn_duzenle.Style = MetroFramework.MetroColorStyle.Red;
@@ -77,7 +78,7 @@
             // btn_harcamalar
             // 
             this.btn_harcamalar.Highlight = true;
-            this.btn_harcamalar.Location = new System.Drawing.Point(23, 612);
+            this.btn_harcamalar.Location = new System.Drawing.Point(23, 655);
             this.btn_harcamalar.Name = "btn_harcamalar";
             this.btn_harcamalar.Size = new System.Drawing.Size(142, 43);
             this.btn_harcamalar.Style = MetroFramework.MetroColorStyle.Red;
@@ -93,7 +94,7 @@
             // 
             this.metroLabel9.AutoSize = true;
             this.metroLabel9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel9.Location = new System.Drawing.Point(81, 508);
+            this.metroLabel9.Location = new System.Drawing.Point(81, 551);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(69, 19);
             this.metroLabel9.Style = MetroFramework.MetroColorStyle.Red;
@@ -108,7 +109,7 @@
             // 
             this.rcb_aciklama.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rcb_aciklama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rcb_aciklama.Location = new System.Drawing.Point(167, 508);
+            this.rcb_aciklama.Location = new System.Drawing.Point(167, 551);
             this.rcb_aciklama.Name = "rcb_aciklama";
             this.rcb_aciklama.Size = new System.Drawing.Size(219, 87);
             this.rcb_aciklama.TabIndex = 147;
@@ -211,13 +212,12 @@
             this.txt_vade.WaterMark = "Gün olarak giriniz";
             this.txt_vade.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_vade.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_vade.TextChanged += new System.EventHandler(this.txt_vade_TextChanged);
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.metroLabel4.Location = new System.Drawing.Point(103, 317);
+            this.metroLabel4.Location = new System.Drawing.Point(103, 312);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(47, 19);
             this.metroLabel4.Style = MetroFramework.MetroColorStyle.Red;
@@ -450,37 +450,20 @@
             this.txt_proje_no.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_proje_no.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // lbl_birim
-            // 
-            this.lbl_birim.AutoSize = true;
-            this.lbl_birim.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_birim.Location = new System.Drawing.Point(381, 75);
-            this.lbl_birim.Name = "lbl_birim";
-            this.lbl_birim.Size = new System.Drawing.Size(40, 19);
-            this.lbl_birim.Style = MetroFramework.MetroColorStyle.Red;
-            this.lbl_birim.TabIndex = 130;
-            this.lbl_birim.Text = "Birim";
-            this.lbl_birim.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.lbl_birim.UseCustomBackColor = true;
-            this.lbl_birim.UseCustomForeColor = true;
-            this.lbl_birim.UseStyleColors = true;
-            this.lbl_birim.Visible = false;
-            // 
             // lbl_harcamalar
             // 
             this.lbl_harcamalar.AutoSize = true;
             this.lbl_harcamalar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_harcamalar.Location = new System.Drawing.Point(293, 75);
+            this.lbl_harcamalar.Location = new System.Drawing.Point(305, 75);
             this.lbl_harcamalar.Name = "lbl_harcamalar";
-            this.lbl_harcamalar.Size = new System.Drawing.Size(87, 19);
+            this.lbl_harcamalar.Size = new System.Drawing.Size(81, 19);
             this.lbl_harcamalar.Style = MetroFramework.MetroColorStyle.Red;
             this.lbl_harcamalar.TabIndex = 129;
-            this.lbl_harcamalar.Text = "Harcamalar -";
+            this.lbl_harcamalar.Text = "Harcamalar ";
             this.lbl_harcamalar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.lbl_harcamalar.UseCustomBackColor = true;
             this.lbl_harcamalar.UseCustomForeColor = true;
             this.lbl_harcamalar.UseStyleColors = true;
-            this.lbl_harcamalar.Visible = false;
             // 
             // rbProje
             // 
@@ -541,11 +524,49 @@
             this.mySqlCommand.EnableCaching = false;
             this.mySqlCommand.Transaction = null;
             // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.metroLabel10.Location = new System.Drawing.Point(59, 510);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(91, 19);
+            this.metroLabel10.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroLabel10.TabIndex = 153;
+            this.metroLabel10.Text = "Proje Durum :";
+            this.metroLabel10.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLabel10.UseCustomBackColor = true;
+            this.metroLabel10.UseCustomForeColor = true;
+            this.metroLabel10.UseStyleColors = true;
+            // 
+            // cmb_durum
+            // 
+            this.cmb_durum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmb_durum.FormattingEnabled = true;
+            this.cmb_durum.ItemHeight = 23;
+            this.cmb_durum.Items.AddRange(new object[] {
+            "Devam Ediyor",
+            "Durduruldu",
+            "Iptal Edildi",
+            "Tamamlandı"});
+            this.cmb_durum.Location = new System.Drawing.Point(167, 506);
+            this.cmb_durum.Name = "cmb_durum";
+            this.cmb_durum.Size = new System.Drawing.Size(189, 29);
+            this.cmb_durum.Style = MetroFramework.MetroColorStyle.Red;
+            this.cmb_durum.TabIndex = 152;
+            this.cmb_durum.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.cmb_durum.UseCustomBackColor = true;
+            this.cmb_durum.UseCustomForeColor = true;
+            this.cmb_durum.UseSelectable = true;
+            this.cmb_durum.UseStyleColors = true;
+            // 
             // ProjeDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 666);
+            this.ClientSize = new System.Drawing.Size(442, 710);
+            this.Controls.Add(this.metroLabel10);
+            this.Controls.Add(this.cmb_durum);
             this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.btn_duzenle);
             this.Controls.Add(this.btn_harcamalar);
@@ -567,7 +588,6 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.txt_proje_no);
-            this.Controls.Add(this.lbl_birim);
             this.Controls.Add(this.lbl_harcamalar);
             this.Controls.Add(this.rbProje);
             this.Controls.Add(this.rbSeri);
@@ -606,11 +626,12 @@
         public MetroFramework.Controls.MetroLabel metroLabel2;
         public MetroFramework.Controls.MetroLabel metroLabel1;
         public MetroFramework.Controls.MetroTextBox txt_proje_no;
-        public MetroFramework.Controls.MetroLabel lbl_birim;
         public MetroFramework.Controls.MetroLabel lbl_harcamalar;
         public MetroFramework.Controls.MetroRadioButton rbProje;
         public MetroFramework.Controls.MetroRadioButton rbSeri;
         private MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        public MetroFramework.Controls.MetroComboBox cmb_durum;
     }
 }

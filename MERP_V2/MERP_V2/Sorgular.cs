@@ -264,7 +264,7 @@ namespace MERP_V2
         {
             try
             {
-                komut = "SELECT sum(siparis_euro) FROM db_siparis_emri WHERE proje_no ='" + proje_no + "'";
+                komut = "SELECT sum(siparis_euro) FROM db_siparis_emri WHERE proje_no ='" + proje_no + "' and siparis_tipi='V'";
                 da = new MySqlDataAdapter(komut, connection);
                 myCommand = new MySqlCommand(komut, myConnection);
                 myReader = myCommand.ExecuteReader();

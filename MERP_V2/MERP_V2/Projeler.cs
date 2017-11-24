@@ -26,6 +26,7 @@ namespace MERP_V2
         string musteri;
         string vade;
         string aciklama;
+        string durum;
         DateTime baslangic;
         DateTime bitis;
 
@@ -187,6 +188,7 @@ namespace MERP_V2
                 harcamalar = dgw_projeler.Rows[e.RowIndex].Cells[13].Value.ToString();
                 harcama_birim = dgw_projeler.Rows[e.RowIndex].Cells[14].Value.ToString();
                 flag = dgw_projeler.Rows[e.RowIndex].Cells[15].Value.ToString();
+                durum = dgw_projeler.Rows[e.RowIndex].Cells[16].Value.ToString();
             }
             catch { }
         }
@@ -209,6 +211,7 @@ namespace MERP_V2
                 harcamalar = dgw_projeler.Rows[e.RowIndex].Cells[13].Value.ToString();
                 harcama_birim = dgw_projeler.Rows[e.RowIndex].Cells[14].Value.ToString();
                 flag = dgw_projeler.Rows[e.RowIndex].Cells[15].Value.ToString();
+                durum = dgw_projeler.Rows[e.RowIndex].Cells[16].Value.ToString();
             }
             catch { }
         }
@@ -229,7 +232,7 @@ namespace MERP_V2
                 prjDuzenle.txt_vade.Text = vade;
                 prjDuzenle.rcb_aciklama.Text = aciklama;
                 prjDuzenle.lbl_harcamalar.Text = harcamalar;
-                prjDuzenle.lbl_birim.Text = harcama_birim;
+                prjDuzenle.cmb_durum.Text = durum;
                 if (flag == "S") { prjDuzenle.rbSeri.Checked = true; }
                 else { prjDuzenle.rbProje.Checked = true; }
                 prjDuzenle.Show();

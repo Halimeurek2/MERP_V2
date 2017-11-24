@@ -57,12 +57,12 @@ namespace MERP_V2
                 if (rbProje.Checked)
                 {
                     db = new DBConnect();
-                    db.UpdateProjeler(Convert.ToInt32(lbl_id.Text), Convert.ToString(txt_proje_no.Text), Convert.ToString(txt_proje_adi.Text), Convert.ToDecimal(txt_butce.Text), Convert.ToString(cmb_birim.Text), proje_euro, proje_dolar, proje_tl, Convert.ToString(txt_musteri.Text), Convert.ToDateTime(dtp_baslangic.Text), Convert.ToDateTime(dtp_bitis.Text), Convert.ToInt32(txt_vade.Text), Convert.ToString(rcb_aciklama.Text), Convert.ToDecimal(lbl_harcamalar.Text), Convert.ToString(lbl_birim.Text), Convert.ToString("P"));
+                    db.UpdateProjeler(Convert.ToInt32(lbl_id.Text), Convert.ToString(txt_proje_no.Text), Convert.ToString(txt_proje_adi.Text), Convert.ToDecimal(txt_butce.Text), Convert.ToString(cmb_birim.Text), proje_euro, proje_dolar, proje_tl, Convert.ToString(txt_musteri.Text), Convert.ToDateTime(dtp_baslangic.Text), Convert.ToDateTime(dtp_bitis.Text), Convert.ToInt32(txt_vade.Text), Convert.ToString(rcb_aciklama.Text), Convert.ToDecimal(lbl_harcamalar.Text), Convert.ToString("EURO"), Convert.ToString("P"), Convert.ToString(cmb_durum.Text));
                 }
                 if (rbSeri.Checked)
                 {
                     db = new DBConnect();
-                    db.UpdateProjeler(Convert.ToInt32(lbl_id.Text), Convert.ToString(txt_proje_no.Text), Convert.ToString(txt_proje_adi.Text), Convert.ToDecimal(txt_butce.Text), Convert.ToString(cmb_birim.Text), proje_euro, proje_dolar, proje_tl, Convert.ToString(txt_musteri.Text), Convert.ToDateTime(dtp_baslangic.Text), Convert.ToDateTime(dtp_bitis.Text), Convert.ToInt32(txt_vade.Text), Convert.ToString(rcb_aciklama.Text), Convert.ToDecimal(lbl_harcamalar.Text), Convert.ToString(lbl_birim.Text), Convert.ToString("S"));
+                    db.UpdateProjeler(Convert.ToInt32(lbl_id.Text), Convert.ToString(txt_proje_no.Text), Convert.ToString(txt_proje_adi.Text), Convert.ToDecimal(txt_butce.Text), Convert.ToString(cmb_birim.Text), proje_euro, proje_dolar, proje_tl, Convert.ToString(txt_musteri.Text), Convert.ToDateTime(dtp_baslangic.Text), Convert.ToDateTime(dtp_bitis.Text), Convert.ToInt32(txt_vade.Text), Convert.ToString(rcb_aciklama.Text), Convert.ToDecimal(lbl_harcamalar.Text), Convert.ToString("EURO"), Convert.ToString("S"), Convert.ToString(cmb_durum.Text));
                 }
                 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -89,19 +89,6 @@ namespace MERP_V2
                 this.Close();
                 frmHarcamaOng.Close();
             }
-        }
-
-        private void txt_vade_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                vade = Convert.ToString(txt_vade.Text);
-                baslangic = Convert.ToDateTime(dtp_baslangic.Text);
-                bitis = baslangic.AddDays(int.Parse(vade));
-                dtp_bitis.Value = bitis;
-            }
-            catch
-            { }
         }
     }
 }
