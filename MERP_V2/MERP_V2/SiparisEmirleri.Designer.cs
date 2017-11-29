@@ -74,7 +74,7 @@
             this.btn_temizle});
             this.toolStrip1.Location = new System.Drawing.Point(20, 60);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1346, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1252, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -148,9 +148,9 @@
             this.btn_duzenle,
             this.toolStripLabel6,
             this.lbl_toplam});
-            this.toolStrip2.Location = new System.Drawing.Point(20, 742);
+            this.toolStrip2.Location = new System.Drawing.Point(20, 686);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1346, 26);
+            this.toolStrip2.Size = new System.Drawing.Size(1252, 26);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -241,7 +241,7 @@
             this.dgw_siparisemirleri.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgw_siparisemirleri.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgw_siparisemirleri.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgw_siparisemirleri.Size = new System.Drawing.Size(1346, 657);
+            this.dgw_siparisemirleri.Size = new System.Drawing.Size(1252, 601);
             this.dgw_siparisemirleri.TabIndex = 4;
             this.dgw_siparisemirleri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_siparisemirleri_CellClick);
             this.dgw_siparisemirleri.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgw_siparisemirleri_RowHeaderMouseClick);
@@ -276,7 +276,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1292, 732);
             this.Controls.Add(this.dgw_siparisemirleri);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);

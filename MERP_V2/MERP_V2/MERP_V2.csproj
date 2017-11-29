@@ -99,11 +99,15 @@
     <Compile Include="FormMessageBox.Designer.cs">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="GraphicsExtension.cs" />
     <Compile Include="HarcamaOngorusu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HarcamaOngorusu.Designer.cs">
       <DependentUpon>HarcamaOngorusu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HarrProgressBar.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="HelperFunctions.cs" />
     <Compile Include="OdenecekFaturalar.cs">
@@ -360,6 +364,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="merp_sHq_icon.ico" />
+    <None Include="Resources\appbar.cog.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

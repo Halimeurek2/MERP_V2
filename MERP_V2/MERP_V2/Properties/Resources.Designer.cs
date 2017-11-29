@@ -113,6 +113,16 @@ namespace MERP_V2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap appbar_cog {
+            get {
+                object obj = ResourceManager.GetObject("appbar_cog", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap appbar_graph_line_up {
             get {
                 object obj = ResourceManager.GetObject("appbar_graph_line_up", resourceCulture);
